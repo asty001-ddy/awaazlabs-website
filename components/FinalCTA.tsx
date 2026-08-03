@@ -24,10 +24,9 @@ export default function FinalCTA() {
         </h2>
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-void-muted">
-            We will call and message your business exactly like a customer
-            would, log every point where an inquiry dies, and send you a
-            one-page audit with the numbers. No pitch attached. Most owners
-            are surprised. None are bored.
+            We call and message your business like a customer, log where every
+            inquiry dies, and send you the numbers on one page. No pitch. Most
+            owners are surprised.
           </p>
         </Reveal>
 

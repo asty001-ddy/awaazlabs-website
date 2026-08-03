@@ -1,13 +1,37 @@
 "use client";
 
-import { CountUp, MaskReveal, Reveal, Stagger, StaggerItem } from "./motion-primitives";
+import { motion } from "framer-motion";
+import {
+  CountUp,
+  MaskReveal,
+  Reveal,
+  Stagger,
+  StaggerItem,
+  EASE_OUT,
+} from "./motion-primitives";
 
 const LEAKS = [
-  "The WhatsApp message that sat unread until morning, by which time she booked elsewhere",
-  "The web form inquiry that got a reply eight hours later, to a lead that went cold in five minutes",
-  "The no-show nobody called back, so the slot earned nothing",
-  "The happy customer nobody asked for a review, so your competitor's rating grew instead",
+  "The WhatsApp that sat unread overnight. She booked elsewhere by 9am.",
+  "The web form answered eight hours late. That lead died in five minutes.",
+  "The no-show nobody called back. That slot earned nothing.",
+  "The happy customer nobody asked for a review. Your competitor's rating grew instead.",
 ];
+
+/* Animated proportion bar that makes the benchmark scannable at a glance */
+function StatBar({ pct }: { pct: number }) {
+  return (
+    <div className="mt-5 h-1.5 w-full max-w-xs overflow-hidden rounded-full bg-void-line">
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1.2, delay: 0.3, ease: EASE_OUT }}
+        style={{ width: `${pct}%`, transformOrigin: "left" }}
+        className="h-full rounded-full bg-signal-bright"
+      />
+    </div>
+  );
+}
 
 export default function Problem() {
   return (
@@ -32,6 +56,7 @@ export default function Problem() {
             <p className="font-display text-6xl font-medium tracking-tight text-paper lg:text-7xl">
               <CountUp to={23} /> to <CountUp to={42} suffix="%" />
             </p>
+            <StatBar pct={42} />
             <p className="mt-3 text-base text-void-muted">
               of inbound calls to appointment-based businesses are missed
             </p>
@@ -44,6 +69,7 @@ export default function Problem() {
             <p className="font-display text-6xl font-medium tracking-tight text-paper lg:text-7xl">
               <CountUp to={78} suffix="%" />
             </p>
+            <StatBar pct={78} />
             <p className="mt-3 text-base text-void-muted">
               of after-hours callers never leave a voicemail
             </p>
@@ -55,10 +81,9 @@ export default function Problem() {
           <Reveal>
             <div className="space-y-5 text-lg leading-relaxed text-void-muted">
               <p>
-                Not because the team is lazy. Because calls arrive at lunch, at
-                9pm, on Sunday, and three at a time. And here is the part that
-                hurts: the callers you miss do not call back. They scroll to
-                the next name on Google and book there.
+                Not because your team is lazy. Because calls arrive at lunch,
+                at 9pm, on Sunday, three at a time. And missed callers do not
+                call back. They book the next name on Google.
               </p>
               <p>The same leak runs through every channel:</p>
             </div>

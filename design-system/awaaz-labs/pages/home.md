@@ -43,3 +43,15 @@ SynthAI) plus the generator's Bento Grids / monochrome recommendation.
 - `.gridlines` texture on hero (masked fade to paper) and chat vignette.
 - Bento cells carry tinted icon tiles (emerald/amber/sky/violet/rose 100-tint
   bg + 700 text). Color lives in vignettes and tiles, never section paint.
+
+## v2.2 addendum: premium rebrand + conversion copy pass
+
+- Brand accent is now magenta (fuchsia): `--color-signal #A21CAF`,
+  `--color-signal-bright #D946EF`. Green retired. Amber unchanged.
+- Window chrome dots are macOS traffic lights (#FF5F57 / #FEBC2E / #28C840).
+- Copy tightened per Hormozi/Haines/Sanchez: outcome-led hero subhead,
+  punchy fragment leak list, one-line bento bodies. If it can be shown as
+  UI, it is not written as prose.
+- Problem benchmarks carry animated proportion bars (magenta on ink).
+- Nav: The leak / The fix / Setup / Who it's for / Results / FAQ.
+- Hero has a slow-drifting magenta glow (24s loop).

@@ -8,10 +8,10 @@ import { EASE_OUT } from "./motion-primitives";
 
 const NAV_LINKS = [
   { label: "The leak", href: "#problem" },
-  { label: "The system", href: "#system" },
-  { label: "Process", href: "#how-it-works" },
-  { label: "Industries", href: "#industries" },
-  { label: "Proof", href: "#proof" },
+  { label: "The fix", href: "#system" },
+  { label: "Setup", href: "#how-it-works" },
+  { label: "Who it's for", href: "#industries" },
+  { label: "Results", href: "#proof" },
   { label: "FAQ", href: "#faq" },
 ];
 

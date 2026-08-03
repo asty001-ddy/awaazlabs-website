@@ -54,15 +54,15 @@ function AnswerCard() {
       <div ref={ref} className="grid gap-0 lg:grid-cols-[1fr_1fr]">
         <div className="p-7">
           <div className="flex items-center gap-3">
-            <IconTile icon={MessageCircle} tint="bg-emerald-100 text-emerald-700" />
+            <IconTile icon={MessageCircle} tint="bg-fuchsia-100 text-fuchsia-700" />
             <p className="label text-faint">Answer</p>
           </div>
           <h3 className="mt-3 font-display text-2xl font-medium tracking-tight text-ink">
             Every channel, in seconds, 24/7
           </h3>
           <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-            Arabic, English, Hindi or Urdu, switched mid-conversation. Three
-            inquiries at once are three conversations, not two lost customers.
+            Arabic, English, Hindi or Urdu. Three inquiries at once are three
+            conversations, not two lost customers.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {CHANNELS.map((c, i) => (
@@ -432,8 +432,7 @@ function ReviewCard() {
           A rating that compounds
         </h3>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-          After the visit, the thank-you goes out and the Google review gets
-          asked for, every single time.
+          Every visit ends with a thank-you and a review ask. Every time.
         </p>
         <div className="mt-6 flex items-center gap-4">
           <div className="flex gap-1.5" aria-hidden>
@@ -484,15 +483,15 @@ function VerifyCard() {
     <StaggerItem className="card card-lift lg:col-span-3">
       <div ref={ref} className="p-7">
         <div className="flex items-center gap-3">
-          <IconTile icon={ShieldCheck} tint="bg-emerald-100 text-emerald-700" />
+          <IconTile icon={ShieldCheck} tint="bg-fuchsia-100 text-fuchsia-700" />
           <p className="label text-faint">Verify</p>
         </div>
         <h3 className="mt-3 font-display text-xl font-medium tracking-tight text-ink">
           You see everything
         </h3>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-          Every conversation transcribed, scored and flagged by Qualicall. No
-          guessing what was said on Sunday.
+          Every conversation transcribed and scored by Qualicall. No guessing
+          what was said on Sunday.
         </p>
         <div className="mt-6 rounded-xl border border-hairline bg-paper/70 p-4">
           <div className="space-y-2.5">
@@ -544,9 +543,8 @@ export default function Solution() {
         </h2>
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Not a chatbot bolted to your website. A team of AI agents wired
-            into the channels you already use, running your entire inbound
-            operation:
+            Not a chatbot. A team of AI agents wired into the channels you
+            already use:
           </p>
         </Reveal>
 

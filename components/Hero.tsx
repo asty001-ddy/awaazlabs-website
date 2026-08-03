@@ -96,6 +96,13 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-paper/60 to-paper"
       />
+      {/* Slow-drifting brand glow keeps the hero feeling alive */}
+      <motion.div
+        aria-hidden
+        animate={{ x: [0, 60, -30, 0], y: [0, 40, 10, 0] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute top-16 right-[8%] h-[380px] w-[380px] rounded-full bg-signal-bright/[0.10] blur-3xl"
+      />
       <div className="relative mx-auto grid w-full max-w-[1200px] gap-14 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 lg:px-8">
         <div>
           <motion.p
@@ -104,7 +111,7 @@ export default function Hero() {
             transition={{ duration: 0.5, ease: EASE_OUT }}
             className="label text-faint"
           >
-            The AI front desk for appointment-based businesses
+            The 24/7 AI front desk
           </motion.p>
 
           <motion.h1
@@ -123,9 +130,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: EASE_OUT }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft"
           >
-            Awaaz Labs runs your entire front desk: every call, text, WhatsApp
-            and email answered around the clock, appointments booked, no-shows
-            won back, reviews collected. In your customer&apos;s language.
+            It answers, books, reminds, recovers and collects reviews. Every
+            channel, every hour, every language. You just show up to a fuller
+            calendar.
           </motion.p>
 
           <motion.div
