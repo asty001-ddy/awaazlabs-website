@@ -63,6 +63,66 @@ body {
   border-radius: 2px;
 }
 
+/*
+ * Entrance animations for above-the-fold content. Pure CSS so they play
+ * at first paint, before hydration: framer mount-animations held LCP
+ * hostage to the JS bundle. Reduced motion: content renders static.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: anim-fade-up 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards;
+  }
+
+  .anim-mask-wrap {
+    overflow: hidden;
+  }
+
+  .anim-mask-up {
+    transform: translateY(105%);
+    animation: anim-mask-up 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards;
+  }
+
+  .anim-d1 {
+    animation-delay: 0.08s;
+  }
+
+  .anim-d2 {
+    animation-delay: 0.18s;
+  }
+
+  .anim-d3 {
+    animation-delay: 0.3s;
+  }
+
+  .anim-d4 {
+    animation-delay: 0.42s;
+  }
+}
+
+@keyframes anim-fade-up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes anim-mask-up {
+  to {
+    transform: none;
+  }
+}
+
+/*
+ * Below-the-fold sections skip layout/paint until scrolled near.
+ * Cuts initial render and hydration cost on the long homepage.
+ */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 /* Editorial micro-label used as section markers throughout. Mono for texture. */
 .label {
   font-family: var(--font-dm-mono), ui-monospace, monospace;

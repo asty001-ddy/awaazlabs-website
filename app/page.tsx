@@ -62,15 +62,33 @@ export default function Home() {
       <PointerGlow />
       <main>
         <Hero />
-        <ProofBar />
-        <Problem />
-        <Solution />
-        <HowItWorks />
-        <CoverageMath />
-        <Industries />
-        <Proof />
-        <FAQ />
-        <FinalCTA />
+        <div className="cv-auto">
+          <ProofBar />
+        </div>
+        <div className="cv-auto">
+          <Problem />
+        </div>
+        <div className="cv-auto">
+          <Solution />
+        </div>
+        <div className="cv-auto">
+          <HowItWorks />
+        </div>
+        <div className="cv-auto">
+          <CoverageMath />
+        </div>
+        <div className="cv-auto">
+          <Industries />
+        </div>
+        <div className="cv-auto">
+          <Proof />
+        </div>
+        <div className="cv-auto">
+          <FAQ />
+        </div>
+        <div className="cv-auto">
+          <FinalCTA />
+        </div>
       </main>
     </>
   );

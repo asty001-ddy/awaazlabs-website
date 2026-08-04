@@ -74,20 +74,22 @@ export function PageHero({
   title: React.ReactNode;
   lede?: string;
 }) {
+  /*
+   * CSS entrances, not framer: PageHero is the LCP element on every
+   * interior page and must paint before hydration.
+   */
   return (
     <header className="mx-auto max-w-[1200px] px-5 pt-10 pb-14 lg:px-8 lg:pt-14 lg:pb-20">
-      <Reveal>
-        <p className="label text-faint">{label}</p>
-      </Reveal>
+      <p className="anim-fade-up label text-faint">{label}</p>
       <h1 className="mt-6 max-w-4xl font-display text-4xl leading-[1.03] font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
-        <MaskReveal>{title}</MaskReveal>
+        <span className="anim-mask-wrap block">
+          <span className="anim-mask-up block">{title}</span>
+        </span>
       </h1>
       {lede && (
-        <Reveal delay={0.12}>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {lede}
-          </p>
-        </Reveal>
+        <p className="anim-fade-up anim-d2 mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          {lede}
+        </p>
       )}
     </header>
   );

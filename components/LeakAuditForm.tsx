@@ -21,10 +21,8 @@ export default function LeakAuditForm() {
     setError(null);
     const form = new FormData(e.currentTarget);
     const attribution = getAttribution();
-    const data = {
-      ...Object.fromEntries(form.entries()),
-      attribution,
-    };
+    const entries = Object.fromEntries(form.entries());
+    const data = { ...entries, attribution };
 
     try {
       const res = await fetch("/api/leak-audit", {
@@ -37,7 +35,7 @@ export default function LeakAuditForm() {
         throw new Error(body?.error ?? "Something went wrong. Try again.");
       }
       track("audit_submitted", {
-        industry: String(data.industry ?? ""),
+        industry: String(entries.industry ?? ""),
         ...attribution,
       });
       router.push("/leak-audit/thanks");

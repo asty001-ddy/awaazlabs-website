@@ -73,12 +73,7 @@ export default function Hero() {
          * column and squeezed the orchestra card on long phrases.
          */}
         <div className="@container min-w-0">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: EASE_OUT }}
-            className="inline-flex items-center gap-2.5 rounded-full border border-hairline bg-white/70 py-2 pr-4 pl-3 backdrop-blur-sm"
-          >
+          <p className="anim-fade-up inline-flex items-center gap-2.5 rounded-full border border-hairline bg-white/70 py-2 pr-4 pl-3 backdrop-blur-sm">
             <span className="relative flex h-2 w-2" aria-hidden>
               <span className="h-2 w-2 rounded-full bg-signal-bright" />
               <motion.span
@@ -90,35 +85,27 @@ export default function Hero() {
             <span className="label text-ink-soft">
               The 24/7 AI front desk, live on 3 continents
             </span>
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: EASE_OUT }}
-            className="mt-8 font-display text-[clamp(26px,10.8cqw,76px)] leading-[1.02] font-medium tracking-tight text-ink"
-          >
-            Never lose another customer to
-            <Ticker />
-          </motion.h1>
+          {/* Transform-only entrance: opacity-faded text is excluded from
+              LCP, so the headline must paint visible and slide in */}
+          <h1 className="mt-8 font-display text-[clamp(26px,10.8cqw,76px)] leading-[1.02] font-medium tracking-tight text-ink">
+            <span className="anim-mask-wrap block">
+              <span className="anim-mask-up block">
+                Never lose another customer to
+                <Ticker />
+              </span>
+            </span>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: EASE_OUT }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft"
-          >
+          {/* No entrance animation: the page's guaranteed LCP paint */}
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
             It answers, books, reminds, recovers and collects reviews. Every
             channel, every hour, every language. You just show up to a fuller
             calendar.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: EASE_OUT }}
-            className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-          >
+          <div className="anim-fade-up anim-d3 mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <motion.a
               href={LINKS.leakAudit}
               whileHover={{ scale: 1.02 }}
@@ -138,25 +125,19 @@ export default function Hero() {
             >
               Hear it take a call
             </motion.a>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-5 max-w-md text-sm leading-relaxed text-faint"
-          >
+          <p className="anim-fade-up anim-d4 mt-5 max-w-md text-sm leading-relaxed text-faint">
             We call your business like a customer would, then show you exactly
             where inquiries go to die. Free, and uncomfortably specific.
-          </motion.p>
+          </p>
         </div>
 
         {/* Channel orchestration: every channel in, one streamlined desk out */}
-        <motion.aside
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: EASE_OUT }}
-          className="card beam min-w-0 self-center overflow-hidden"
+        {/* translate="no": the multilingual vignette is product UI, not page copy */}
+        <aside
+          translate="no"
+          className="anim-fade-up anim-d3 card beam min-w-0 self-center overflow-hidden"
         >
           <div className="chrome justify-between !py-4">
             <span className="flex items-center gap-1.5">
@@ -177,7 +158,7 @@ export default function Hero() {
           <div className="gridlines px-3 py-5 sm:px-4">
             <ChannelOrchestra />
           </div>
-        </motion.aside>
+        </aside>
       </div>
     </section>
   );
