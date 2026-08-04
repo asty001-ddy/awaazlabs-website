@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Multiple lockfiles exist on this machine; pin tracing to the project root
   outputFileTracingRoot: path.join(__dirname),
+  // Local verification builds use a separate dir (NEXT_DIST_DIR=.next-prod)
+  // so they can't corrupt a running dev server's cache. Unset in CI/Vercel.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
 };
 
 export default nextConfig;
