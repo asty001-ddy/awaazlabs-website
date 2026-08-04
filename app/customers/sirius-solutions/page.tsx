@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
+import { CASE_STUDIES_LIVE } from "@/lib/flags";
 
-/* Signed off by Sirius Solutions Global, Aug 2026. Figures from the approved proof list. */
+/* Figures from the approved proof list. Indexability gated on
+ * NEXT_PUBLIC_CASE_STUDIES_LIVE until client sign-off is confirmed. */
 
 export const metadata: Metadata = {
   title: "Sirius Solutions Global Case Study | Awaaz Labs",
   description:
     "Sirius Solutions Global runs Awaaz Labs live in production in the United States, handling around 50 calls a day.",
   alternates: { canonical: "/customers/sirius-solutions" },
+  ...(CASE_STUDIES_LIVE ? {} : { robots: { index: false, follow: false } }),
 };
 
 export default function SiriusPage() {

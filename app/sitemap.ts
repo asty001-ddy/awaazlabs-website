@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { POSTS } from "@/lib/posts";
+import { CASE_STUDIES_LIVE } from "@/lib/flags";
 
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
@@ -15,8 +16,12 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/book-a-call", priority: 0.8 },
   { path: "/demo", priority: 0.7 },
   { path: "/customers", priority: 0.7 },
-  { path: "/customers/advanzatech", priority: 0.6 },
-  { path: "/customers/sirius-solutions", priority: 0.6 },
+  ...(CASE_STUDIES_LIVE
+    ? [
+        { path: "/customers/advanzatech", priority: 0.6 },
+        { path: "/customers/sirius-solutions", priority: 0.6 },
+      ]
+    : []),
   { path: "/security", priority: 0.5 },
   { path: "/contact", priority: 0.5 },
   { path: "/privacy", priority: 0.2 },

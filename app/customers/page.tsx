@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
+import { CASE_STUDIES_LIVE } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "Customers | Awaaz Labs",
@@ -38,27 +39,41 @@ export default function CustomersPage() {
       />
       <div className="mx-auto max-w-[1200px] px-5 pb-14 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">
-          {CASES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/customers/${c.slug}`}
-              className="card card-lift group p-8"
-            >
-              <p className="label text-faint">{c.region}</p>
-              <p className="mt-5 font-display text-6xl font-medium tracking-tight text-ink">
-                {c.stat}
-              </p>
-              <p className="mt-2 text-[15px] text-ink-soft">{c.statLabel}</p>
-              <p className="mt-6 flex items-center gap-2 font-display text-2xl font-medium tracking-tight text-ink">
-                {c.company}
-                <ArrowUpRight
-                  size={18}
-                  aria-hidden
-                  className="text-signal opacity-0 transition-opacity group-hover:opacity-100"
-                />
-              </p>
-            </Link>
-          ))}
+          {CASES.map((c) =>
+            CASE_STUDIES_LIVE ? (
+              <Link
+                key={c.slug}
+                href={`/customers/${c.slug}`}
+                className="card card-lift group p-8"
+              >
+                <p className="label text-faint">{c.region}</p>
+                <p className="mt-5 font-display text-6xl font-medium tracking-tight text-ink">
+                  {c.stat}
+                </p>
+                <p className="mt-2 text-[15px] text-ink-soft">{c.statLabel}</p>
+                <p className="mt-6 flex items-center gap-2 font-display text-2xl font-medium tracking-tight text-ink">
+                  {c.company}
+                  <ArrowUpRight
+                    size={18}
+                    aria-hidden
+                    className="text-signal opacity-0 transition-opacity group-hover:opacity-100"
+                  />
+                </p>
+              </Link>
+            ) : (
+              <div key={c.slug} className="card p-8">
+                <p className="label text-faint">{c.region}</p>
+                <p className="mt-5 font-display text-6xl font-medium tracking-tight text-ink">
+                  {c.stat}
+                </p>
+                <p className="mt-2 text-[15px] text-ink-soft">{c.statLabel}</p>
+                <p className="mt-6 font-display text-2xl font-medium tracking-tight text-ink">
+                  {c.company}
+                </p>
+                <p className="label mt-3 text-faint">Case study coming soon</p>
+              </div>
+            ),
+          )}
         </div>
         <div className="card mt-5 p-8">
           <p className="label text-faint">Pakistan</p>
