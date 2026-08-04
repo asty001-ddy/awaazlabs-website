@@ -1,0 +1,20 @@
+# Awaaz Labs
+
+> Awaaz Labs is the AI front desk for appointment-based businesses. It answers every inbound call, WhatsApp, SMS, email and web form 24/7 in the customer's language, qualifies the lead, books the appointment, sends reminders, recovers no-shows, reactivates lapsed customers and collects reviews. Every conversation is transcribed and scored by Qualicall. A product of Finova Solutions.
+
+Key facts:
+- Category: AI receptionist / missed call recovery / appointment booking automation
+- Deployed in production on three continents: United States (Sirius Solutions Global), United Arab Emirates (Advanzatech, 70 meetings booked in month two), Pakistan (Telecom Foundation, Government of Pakistan Ministry of IT subsidiary)
+- Live in 2 to 3 weeks from signed agreement
+- Languages: Arabic (including Khaleeji, Levantine and Egyptian dialects), English, Hindi, Urdu, with mid-conversation switching
+- Security: in-region data residency, HIPAA-architected, ISO 27001 aligned, end-to-end encrypted, full audit trail
+
+## Pages
+- [Home](https://awaazlabs.io/): what the AI front desk does
+- [Industries](https://awaazlabs.io/industries): verticals served
+- [Aesthetics](https://awaazlabs.io/industries/aesthetics): AI front desk for aesthetic clinics and med spas
+- [Real estate](https://awaazlabs.io/industries/real-estate): AI front desk for brokerages
+- [Free leak audit](https://awaazlabs.io/leak-audit): free mystery-shop audit of a business's inbound channels
+- [Missed revenue calculator](https://awaazlabs.io/tools/missed-revenue-calculator): free estimate of monthly revenue lost to missed inquiries
+- [Customers](https://awaazlabs.io/customers): named production deployments
+- [Security](https://awaazlabs.io/security): data protection details

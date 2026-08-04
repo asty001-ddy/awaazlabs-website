@@ -1,4 +1,5 @@
-import { TAGLINE } from "@/lib/site";
+import Link from "next/link";
+import { TAGLINE, FOOTER_LINKS } from "@/lib/site";
 
 /*
  * Simplified rendition of the Finova Solutions shield mark.
@@ -24,10 +25,7 @@ function FinovaMark() {
         d="M2 1.5h20v13.2c0 6.2-4.6 9.8-10 11.8-5.4-2-10-5.6-10-11.8Z"
         fill="url(#finova-g)"
       />
-      <path
-        d="M7.5 6h9.5v3H11v3.2h5v3H11v6.3H7.5Z"
-        fill="#FAFAF7"
-      />
+      <path d="M7.5 6h9.5v3H11v3.2h5v3H11v6.3H7.5Z" fill="#FAFAF7" />
     </svg>
   );
 }
@@ -42,19 +40,18 @@ export default function Footer() {
       >
         Awaaz Labs
       </p>
-      <div className="mx-auto flex max-w-[1200px] flex-col items-start justify-between gap-8 border-t border-void-line/60 px-5 pt-10 sm:flex-row sm:items-center lg:px-8">
-        <div>
+
+      <div className="mx-auto grid max-w-[1200px] gap-10 border-t border-void-line/60 px-5 pt-10 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+        <div className="lg:col-span-2">
           <p className="font-display text-lg font-semibold tracking-tight text-paper">
             Awaaz Labs
           </p>
           <p className="mt-1 text-sm">{TAGLINE}</p>
-        </div>
-        <div className="text-sm sm:text-right">
           <a
             href="https://finovasolutions.tech"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 transition-opacity duration-200 hover:opacity-80"
+            className="group mt-6 inline-flex items-center gap-2.5 text-sm transition-opacity duration-200 hover:opacity-80"
           >
             <FinovaMark />
             <span>
@@ -64,10 +61,30 @@ export default function Footer() {
               </span>
             </span>
           </a>
-          <p className="mt-2 opacity-70">
-            &copy; {new Date().getFullYear()} Awaaz Labs. All rights reserved.
-          </p>
         </div>
+
+        {FOOTER_LINKS.map((col) => (
+          <nav key={col.heading} aria-label={col.heading}>
+            <p className="label text-void-muted/70">{col.heading}</p>
+            <ul className="mt-4 space-y-2.5">
+              {col.links.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-void-muted transition-colors hover:text-paper"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
+      </div>
+
+      <div className="mx-auto mt-12 flex max-w-[1200px] flex-col justify-between gap-3 border-t border-void-line/60 px-5 pt-6 text-sm opacity-70 sm:flex-row lg:px-8">
+        <p>&copy; {new Date().getFullYear()} Awaaz Labs. All rights reserved.</p>
+        <p>Built for businesses that live and die by the calendar.</p>
       </div>
     </footer>
   );

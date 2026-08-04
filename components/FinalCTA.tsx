@@ -48,6 +48,15 @@ export default function FinalCTA() {
             </span>
             Get my free leak audit
           </motion.a>
+          <motion.a
+            href="/book-a-call"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.2, ease: EASE_OUT }}
+            className="label mt-12 ml-0 inline-flex cursor-pointer items-center rounded-full border border-void-line px-8 py-5 text-paper transition-colors duration-200 hover:bg-paper hover:text-ink sm:ml-3"
+          >
+            Book a free sales call
+          </motion.a>
           <p className="mt-5 text-sm text-void-muted">
             Takes you 2 minutes to request. Costs your competitors a fortune.
           </p>

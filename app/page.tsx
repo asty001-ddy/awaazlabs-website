@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import ProofBar from "@/components/ProofBar";
 import Problem from "@/components/Problem";
@@ -9,23 +8,8 @@ import Industries from "@/components/Industries";
 import Proof from "@/components/Proof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
-import { MotionProvider, PointerGlow } from "@/components/motion-primitives";
+import { PointerGlow } from "@/components/motion-primitives";
 import { FAQS } from "@/lib/faqs";
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Awaaz Labs",
-  url: "https://awaazlabs.io",
-  slogan: "Miss nothing. Book everything.",
-  description:
-    "Awaaz Labs is the AI front desk that captures every inbound lead an appointment-based business would otherwise miss, then books, reminds, follows up, and collects the review.",
-  parentOrganization: {
-    "@type": "Organization",
-    name: "Finova Solutions",
-  },
-};
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -65,11 +49,7 @@ const faqSchema = {
 
 export default function Home() {
   return (
-    <MotionProvider>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -80,7 +60,6 @@ export default function Home() {
       />
 
       <PointerGlow />
-      <Nav />
       <main>
         <Hero />
         <ProofBar />
@@ -93,7 +72,6 @@ export default function Home() {
         <FAQ />
         <FinalCTA />
       </main>
-      <Footer />
-    </MotionProvider>
+    </>
   );
 }

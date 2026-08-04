@@ -18,6 +18,10 @@
 
 **Business model:** One-time setup per agent + monthly combined-minute plans (Essential / Growth / Scale / Enterprise). Priced per market (AED / SAR / QAR).
 
+**Hard rule: no pricing anywhere on the public site.** No figures, tiers, or currency amounts. Pricing is discussed on the sales call only.
+
+**Universal-base rule:** base pages are globally universal (no currency, no named regulators, no city names, no region-specific language lists). Regional specificity lives only on city pages ({base}/{city}).
+
 ## 2. Target Audience
 
 **Primary ICP (homepage):** Owner-operators and managers of appointment-based businesses. Homepage is industry-universal; industry tabs go deep.
@@ -27,8 +31,9 @@
 2. Dental clinics
 3. Real estate
 4. Restaurants (reservations)
-5. Vehicle recovery / roadside
-6. Home services and trades
+5. Home services and trades
+
+(Vehicle recovery removed Aug 2026: dispatch, not appointments. See master-build-v5 GAP 13.)
 
 **Decision maker:** The owner. Cares about revenue, not technology. Feels the leak but has never quantified it.
 
@@ -78,6 +83,9 @@
 - Multilingual: Arabic (27 dialects incl. Khaleeji, Levantine, Egyptian), English, Hindi, Urdu, mid-conversation switching
 - Every interaction transcribed and scored (Qualicall)
 - Industry benchmarks (cite as benchmarks): 23 to 42 percent of calls missed; 40 to 60 percent of aesthetic inquiries after hours; 78 percent of after-hours callers never leave voicemail
+- In-region data residency (confirmed)
+- HIPAA-architected (confirmed)
+- ISO 27001 aligned, end-to-end encrypted, full audit trail (confirmed; substance on /security)
 
 ## 7. Voice and Style
 
@@ -89,8 +97,8 @@
 
 ## 8. Primary CTA
 
-**"Get your free leak audit"** (primary): mirrors the mystery-shop GTM motion; the audit is the natural first yes.
-Secondary: "Hear Layla take a call" (live demo number or embedded audio).
+**"Get your free leak audit"** (primary, links /leak-audit): mirrors the mystery-shop GTM motion; the audit is the natural first yes.
+Secondary: **"Book a free sales call"** (links /book-a-call). Demo recordings live at /demo.
 
 ## Changelog
 - 1.0 (Aug 2026): Initial doc for awaazlabs.io redesign. Repositioned from "voice AI for GCC clinics" to universal "AI front desk / inbound capture system for appointment-based businesses" with industry verticals as tabs.
