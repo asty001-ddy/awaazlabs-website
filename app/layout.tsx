@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Awaaz Labs",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
