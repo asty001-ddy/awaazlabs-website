@@ -67,7 +67,12 @@ export default function Hero() {
         className="pointer-events-none absolute top-16 right-[8%] h-[380px] w-[380px] rounded-full bg-signal-bright/[0.10] blur-3xl"
       />
       <div className="relative mx-auto grid w-full max-w-[1200px] gap-14 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 lg:px-8">
-        <div>
+        {/*
+         * @container: the headline column sizes from the grid, never from
+         * its content. Without this, the nowrap ticker phrase widened the
+         * column and squeezed the orchestra card on long phrases.
+         */}
+        <div className="@container min-w-0">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.08, ease: EASE_OUT }}
-            className="mt-8 font-display text-[clamp(26px,8.5vw,44px)] leading-[1.02] font-medium tracking-tight text-ink sm:text-[clamp(44px,6.5vw,64px)] lg:text-[clamp(48px,5.8vw,76px)]"
+            className="mt-8 font-display text-[clamp(26px,10.8cqw,76px)] leading-[1.02] font-medium tracking-tight text-ink"
           >
             Never lose another customer to
             <Ticker />
@@ -151,7 +156,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: EASE_OUT }}
-          className="card beam self-center overflow-hidden"
+          className="card beam min-w-0 self-center overflow-hidden"
         >
           <div className="chrome justify-between !py-4">
             <span className="flex items-center gap-1.5">

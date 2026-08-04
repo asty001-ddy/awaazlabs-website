@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd } from "@/components/subpage";
+import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -87,25 +88,32 @@ export default function RealEstatePage() {
       />
 
       <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
-        <div className="grid gap-10 border-y border-hairline py-10 sm:grid-cols-2">
-          <div>
-            <p className="font-display text-6xl font-medium tracking-tight text-ink">
-              23 to 42%
-            </p>
-            <p className="mt-3 text-base text-ink-soft">
-              of inbound calls to appointment-based businesses are missed
-            </p>
-            <p className="label mt-3 text-faint">Industry benchmark</p>
+        <div className="grid items-center gap-10 border-y border-hairline py-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-1">
+            <BenchmarkStat
+              prefix="23 to "
+              to={42}
+              label="of inbound calls to appointment-based businesses are missed"
+            />
+            <div>
+              <p className="font-display text-6xl font-medium tracking-tight text-ink">
+                Minutes
+              </p>
+              <p className="mt-3 text-base text-ink-soft">
+                not hours: the window in which a listing lead is still yours
+              </p>
+              <p className="label mt-3 text-faint">Speed to lead</p>
+            </div>
           </div>
-          <div>
-            <p className="font-display text-6xl font-medium tracking-tight text-ink">
-              Minutes
-            </p>
-            <p className="mt-3 text-base text-ink-soft">
-              not hours: the window in which a listing lead is still yours
-            </p>
-            <p className="label mt-3 text-faint">Speed to lead</p>
-          </div>
+          <ChatVignette
+            label="8:04 PM, listing inquiry"
+            messages={[
+              { from: "customer", text: "Is the 2BR on the canal still available? What's the service charge?" },
+              { from: "agent", text: "It is. Service charge details are in the listing pack I can send now. Viewing tomorrow 5:30 or Thursday 10:00?" },
+              { from: "customer", text: "Tomorrow 5:30 please" },
+            ]}
+            chip="Viewing booked, agent notified"
+          />
         </div>
       </section>
 

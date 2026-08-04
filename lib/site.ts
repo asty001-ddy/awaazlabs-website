@@ -56,26 +56,37 @@ export const INDUSTRIES = [
   },
 ] as const;
 
+/*
+ * Nav rules: dropdown triggers are themselves links to their hub page.
+ * Dropdowns list base pages only. City pages never appear in the nav:
+ * they are local-SEO assets, crawlable from the footer and their base
+ * page's body links.
+ */
 export const NAV = {
+  industriesHub: "/industries",
   industries: [
-    { label: "All industries", href: "/industries" },
     { label: "Aesthetics and med spas", href: "/industries/aesthetics" },
-    { label: "Aesthetics, Dubai", href: "/industries/aesthetics/dubai" },
     { label: "Real estate", href: "/industries/real-estate" },
-    { label: "Real estate, Dubai", href: "/industries/real-estate/dubai" },
   ],
+  toolsHub: "/tools",
   tools: [
-    { label: "All tools", href: "/tools" },
     {
       label: "Missed revenue calculator",
       href: "/tools/missed-revenue-calculator",
     },
+    { label: "Guides and blog", href: "/blog" },
   ],
   single: [
     { label: "Customers", href: "/customers" },
     { label: "Demo", href: "/demo" },
   ],
 } as const;
+
+/** City pages: footer-only links (local SEO paths to the money pages). */
+export const CITY_LINKS = [
+  { label: "AI front desk for Dubai aesthetics", href: "/industries/aesthetics/dubai" },
+  { label: "AI front desk for Dubai real estate", href: "/industries/real-estate/dubai" },
+] as const;
 
 /** Universal trust strip: confirmed, approved claims only. */
 export const TRUST_CLAIMS = [
@@ -103,8 +114,13 @@ export const FOOTER_LINKS = [
       { label: "Free leak audit", href: "/leak-audit" },
       { label: "Book a free sales call", href: "/book-a-call" },
       { label: "Missed revenue calculator", href: "/tools/missed-revenue-calculator" },
+      { label: "Guides and blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],
+  },
+  {
+    heading: "Local",
+    links: [...CITY_LINKS],
   },
   {
     heading: "Legal",

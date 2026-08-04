@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Radar, ShieldCheck } from "lucide-react";
 import { LINKS, TRUST_CLAIMS, SITE_URL } from "@/lib/site";
+import { MaskReveal, Reveal, Stagger, StaggerItem } from "./motion-primitives";
 
 /**
  * Shared building blocks for every interior page. Server components:
@@ -75,14 +76,18 @@ export function PageHero({
 }) {
   return (
     <header className="mx-auto max-w-[1200px] px-5 pt-10 pb-14 lg:px-8 lg:pt-14 lg:pb-20">
-      <p className="label text-faint">{label}</p>
+      <Reveal>
+        <p className="label text-faint">{label}</p>
+      </Reveal>
       <h1 className="mt-6 max-w-4xl font-display text-4xl leading-[1.03] font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
-        {title}
+        <MaskReveal>{title}</MaskReveal>
       </h1>
       {lede && (
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          {lede}
-        </p>
+        <Reveal delay={0.12}>
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            {lede}
+          </p>
+        </Reveal>
       )}
     </header>
   );
@@ -100,7 +105,7 @@ export function CTABand({
     <section className="px-3 py-8 sm:px-5 lg:px-6">
       <div className="panel-void dots mx-auto max-w-[1360px] px-6 py-16 text-paper sm:px-12 lg:px-20 lg:py-20">
         <h2 className="max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight sm:text-5xl">
-          {title}
+          <MaskReveal>{title}</MaskReveal>
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-void-muted">
           {body}
@@ -191,9 +196,9 @@ export function RuledList({
   items: { title: string; body: string }[];
 }) {
   return (
-    <ul className="divide-y divide-hairline border-y border-hairline">
+    <Stagger className="divide-y divide-hairline border-y border-hairline">
       {items.map((item, i) => (
-        <li
+        <StaggerItem
           key={item.title}
           className="grid gap-2 py-6 sm:grid-cols-[56px_1fr_1.2fr] sm:items-baseline sm:gap-6"
         >
@@ -202,8 +207,8 @@ export function RuledList({
             {item.title}
           </h3>
           <p className="text-[15px] leading-relaxed text-ink-soft">{item.body}</p>
-        </li>
+        </StaggerItem>
       ))}
-    </ul>
+    </Stagger>
   );
 }

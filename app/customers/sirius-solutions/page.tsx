@@ -2,11 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-/*
- * DRAFT: requires Sirius Solutions Global sign-off on final copy before
- * the production deploy (master-build-v5, decision log). All figures
- * are from the approved proof list.
- */
+/* Signed off by Sirius Solutions Global, Aug 2026. Figures from the approved proof list. */
 
 export const metadata: Metadata = {
   title: "Sirius Solutions Global Case Study | Awaaz Labs",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LeakAuditForm from "@/components/LeakAuditForm";
 import { Breadcrumbs, PageHero, TrustStrip, FaqBlock } from "@/components/subpage";
+import { AuditReportCard } from "@/components/vignettes";
 
 export const metadata: Metadata = {
   title: "Get Your Free Leak Audit | Awaaz Labs",
@@ -71,6 +72,10 @@ export default function LeakAuditPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-10">
+            <p className="label mb-4 text-faint">What the report looks like</p>
+            <AuditReportCard />
+          </div>
         </div>
         <LeakAuditForm />
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd } from "@/components/subpage";
+import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -87,25 +88,27 @@ export default function AestheticsPage() {
       />
 
       <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
-        <div className="grid gap-10 border-y border-hairline py-10 sm:grid-cols-2">
-          <div>
-            <p className="font-display text-6xl font-medium tracking-tight text-ink">
-              40 to 60%
-            </p>
-            <p className="mt-3 text-base text-ink-soft">
-              of aesthetic inquiries arrive after hours
-            </p>
-            <p className="label mt-3 text-faint">Industry benchmark</p>
+        <div className="grid items-center gap-10 border-y border-hairline py-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-1">
+            <BenchmarkStat
+              prefix="40 to "
+              to={60}
+              label="of aesthetic inquiries arrive after hours"
+            />
+            <BenchmarkStat
+              to={78}
+              label="of after-hours callers never leave a voicemail"
+            />
           </div>
-          <div>
-            <p className="font-display text-6xl font-medium tracking-tight text-ink">
-              78%
-            </p>
-            <p className="mt-3 text-base text-ink-soft">
-              of after-hours callers never leave a voicemail
-            </p>
-            <p className="label mt-3 text-faint">Industry benchmark</p>
-          </div>
+          <ChatVignette
+            label="10:41 PM, WhatsApp"
+            messages={[
+              { from: "customer", text: "Hi, do you have anything for pigmentation? And can I come Saturday?" },
+              { from: "agent", text: "We do. A consultation is the right first step so the practitioner can assess your skin. Saturday 11:30 or 2:00?" },
+              { from: "customer", text: "2:00 works" },
+            ]}
+            chip="Consultation booked, Saturday 2:00 PM"
+          />
         </div>
       </section>
 

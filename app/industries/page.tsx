@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip } from "@/components/subpage";
+import ChannelOrchestra from "@/components/ChannelOrchestra";
 import { INDUSTRIES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -59,6 +60,19 @@ export default function IndustriesPage() {
             </li>
           ))}
         </ul>
+        <div className="card mx-auto mt-12 max-w-2xl overflow-hidden">
+          <div className="chrome">
+            <span className="chrome-dot" />
+            <span className="chrome-dot" />
+            <span className="chrome-dot" />
+            <span className="label ml-2 text-faint">
+              Same system, every vertical
+            </span>
+          </div>
+          <div className="gridlines px-4 py-6">
+            <ChannelOrchestra />
+          </div>
+        </div>
         <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
           Not on the list? If your business books appointments, the system
           fits. Start with a{" "}

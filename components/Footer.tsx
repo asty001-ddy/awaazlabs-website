@@ -9,23 +9,35 @@ import { TAGLINE, FOOTER_LINKS } from "@/lib/site";
 function FinovaMark() {
   return (
     <svg
-      viewBox="0 0 24 28"
-      width="18"
-      height="21"
+      viewBox="0 0 44 50"
+      width="20"
+      height="23"
       aria-hidden
       className="shrink-0"
     >
       <defs>
-        <linearGradient id="finova-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#16355F" />
-          <stop offset="1" stopColor="#2FA3DC" />
+        <linearGradient id="finova-g1" x1="0" y1="0" x2="0.9" y2="1">
+          <stop offset="0" stopColor="#123057" />
+          <stop offset="0.55" stopColor="#1B5C93" />
+          <stop offset="1" stopColor="#2D9CD6" />
+        </linearGradient>
+        <linearGradient id="finova-g2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1B2A5E" />
+          <stop offset="1" stopColor="#2D9CD6" />
         </linearGradient>
       </defs>
+      {/* Left body of the shield with the integrated F */}
       <path
-        d="M2 1.5h20v13.2c0 6.2-4.6 9.8-10 11.8-5.4-2-10-5.6-10-11.8Z"
-        fill="url(#finova-g)"
+        d="M3 2 H17 V12 H10 V19 H16 V27 H10 V34.5 C10 38 13.5 41.5 22 45.5 V50 C9 44.5 3 38 3 28 Z"
+        fill="url(#finova-g1)"
       />
-      <path d="M7.5 6h9.5v3H11v3.2h5v3H11v6.3H7.5Z" fill="#FAFAF7" />
+      {/* Top bar of the F reaching right */}
+      <path d="M20 2 H41 V12 H20 Z" fill="url(#finova-g2)" />
+      {/* Right bracket of the shield */}
+      <path
+        d="M34 15 H41 V28 C41 38 35 44.5 22 50 V45.5 C30.5 41.5 34 38 34 34.5 Z"
+        fill="url(#finova-g2)"
+      />
     </svg>
   );
 }
@@ -41,7 +53,7 @@ export default function Footer() {
         Awaaz Labs
       </p>
 
-      <div className="mx-auto grid max-w-[1200px] gap-10 border-t border-void-line/60 px-5 pt-10 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+      <div className="mx-auto grid max-w-[1200px] gap-10 border-t border-void-line/60 px-5 pt-10 sm:grid-cols-2 lg:grid-cols-6 lg:px-8">
         <div className="lg:col-span-2">
           <p className="font-display text-lg font-semibold tracking-tight text-paper">
             Awaaz Labs

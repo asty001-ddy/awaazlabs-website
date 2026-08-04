@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd } from "@/components/subpage";
+import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -89,6 +90,20 @@ export default function AestheticsDubaiPage() {
         title="Dubai books beauty at midnight. Your front desk left at six."
         lede="The Awaaz Labs AI front desk answers your clinic's calls, WhatsApp and DMs around the clock, in Arabic and English, and turns them into consultations on your calendar."
       />
+
+      <section className="mx-auto max-w-[1200px] px-5 pb-14 lg:px-8">
+        <div className="mx-auto max-w-xl">
+          <ChatVignette
+            label="11:52 PM, WhatsApp"
+            messages={[
+              { from: "customer", dir: "rtl", text: "مساء الخير، عندكم موعد استشارة هالأسبوع؟" },
+              { from: "agent", dir: "rtl", text: "أهلا فيك، أكيد. الخميس ٦:٣٠ أو السبت ٢:٠٠، أي وقت يناسبك؟" },
+              { from: "customer", text: "Saturday 2pm works, thanks" },
+            ]}
+            chip="Consultation booked, Saturday 2:00 PM"
+          />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-[1200px] px-5 pb-20 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">

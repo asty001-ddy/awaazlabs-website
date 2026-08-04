@@ -9,20 +9,23 @@ import { EASE_OUT } from "./motion-primitives";
 
 function Dropdown({
   label,
+  hub,
   items,
 }: {
   label: string;
+  hub: string;
   items: readonly { label: string; href: string }[];
 }) {
   return (
     <div className="group relative">
-      <button
-        type="button"
+      {/* The trigger routes to the hub page; hovering reveals children */}
+      <Link
+        href={hub}
         className="label flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-2.5 text-faint transition-colors duration-200 group-hover:bg-ink/5 group-hover:text-ink"
       >
         {label}
         <ChevronDown size={12} aria-hidden className="transition-transform duration-200 group-hover:rotate-180" />
-      </button>
+      </Link>
       <div className="invisible absolute top-full left-0 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
         <div className="min-w-[230px] rounded-2xl border border-hairline bg-paper/95 p-2 shadow-lg backdrop-blur-md">
           {items.map((item) => (
@@ -44,8 +47,10 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   const mobileLinks = [
+    { label: "Industries", href: NAV.industriesHub },
     ...NAV.industries,
-    ...NAV.tools.slice(1),
+    { label: "Tools", href: NAV.toolsHub },
+    ...NAV.tools,
     ...NAV.single,
   ];
 
@@ -66,8 +71,8 @@ export default function Nav() {
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
-            <Dropdown label="Industries" items={NAV.industries} />
-            <Dropdown label="Tools" items={NAV.tools} />
+            <Dropdown label="Industries" hub={NAV.industriesHub} items={NAV.industries} />
+            <Dropdown label="Tools" hub={NAV.toolsHub} items={NAV.tools} />
             {NAV.single.map((link) => (
               <Link
                 key={link.href}

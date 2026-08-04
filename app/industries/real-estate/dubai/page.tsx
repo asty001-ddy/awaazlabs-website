@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd } from "@/components/subpage";
+import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -89,6 +90,20 @@ export default function RealEstateDubaiPage() {
         title="Dubai property sells across time zones. Your phone keeps office hours."
         lede="The Awaaz Labs AI front desk answers every listing inquiry around the clock, in the buyer's language, qualifies it, and books the viewing while your agents close."
       />
+
+      <section className="mx-auto max-w-[1200px] px-5 pb-14 lg:px-8">
+        <div className="mx-auto max-w-xl">
+          <ChatVignette
+            label="2:13 AM, international buyer"
+            messages={[
+              { from: "customer", dir: "rtl", text: "السلام عليكم، الشقة في المارينا لسا متوفرة؟" },
+              { from: "agent", dir: "rtl", text: "وعليكم السلام، نعم متوفرة. أرسل لك التفاصيل الآن. تحب تحجز معاينة؟" },
+              { from: "customer", text: "Yes, Friday morning if possible" },
+            ]}
+            chip="Viewing booked, Friday 10:00 AM"
+          />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-[1200px] px-5 pb-20 lg:px-8">
         <div className="grid gap-5 md:grid-cols-2">
