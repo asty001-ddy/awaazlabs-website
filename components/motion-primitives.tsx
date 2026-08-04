@@ -143,6 +143,18 @@ export function MaskReveal({
 }
 
 /**
+ * Captures session attribution (UTMs + referrer) on first load.
+ * Renders nothing; mounted once in the root layout.
+ */
+export function AttributionCapture() {
+  useEffect(() => {
+    // Deferred import keeps this out of the shared server bundle
+    import("@/lib/attribution").then((m) => m.captureAttribution());
+  }, []);
+  return null;
+}
+
+/**
  * Feeds pointer coordinates to the .card-lift spotlight gradient.
  * Renders nothing; mount once per page.
  */

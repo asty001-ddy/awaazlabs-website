@@ -4,7 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
-import { MotionProvider } from "@/components/motion-primitives";
+import { AttributionCapture, MotionProvider } from "@/components/motion-primitives";
 import { SITE_URL, TAGLINE } from "@/lib/site";
 
 const organizationSchema = {
@@ -83,6 +83,7 @@ export default function RootLayout({
           }}
         />
         <MotionProvider>
+          <AttributionCapture />
           <Nav />
           {children}
           <Footer />

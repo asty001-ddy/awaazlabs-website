@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
+import { getAttribution } from "@/lib/attribution";
 
 /**
  * Scheduler embed. Set NEXT_PUBLIC_SCHEDULER_URL (Cal.com/Calendly)
@@ -15,9 +16,15 @@ const SCHEDULER_URL = process.env.NEXT_PUBLIC_SCHEDULER_URL;
 export default function SchedulerEmbed() {
   useEffect(() => {
     function onMessage(e: MessageEvent) {
-      const isCalendly = e.data?.event === "calendly.event_scheduled";
-      const isCalcom = e.data?.type === "bookingSuccessful";
-      if (isCalendly || isCalcom) track("call_booked");
+      const d = e.data;
+      const isCalendly = d?.event === "calendly.event_scheduled";
+      // Cal.com posts either {type: "bookingSuccessful"} or the
+      // namespaced {fullType: "CAL:bookingSuccessful"} shape
+      const isCalcom =
+        d?.type === "bookingSuccessful" ||
+        (typeof d?.fullType === "string" &&
+          d.fullType.includes("bookingSuccessful"));
+      if (isCalendly || isCalcom) track("call_booked", getAttribution());
     }
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);

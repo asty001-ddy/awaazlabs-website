@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { INDUSTRIES } from "@/lib/site";
 import { track } from "@/lib/analytics";
+import { getAttribution } from "@/lib/attribution";
 
 const FIELD =
   "w-full rounded-xl border border-hairline bg-white px-4 py-3.5 text-[15px] text-ink placeholder:text-faint focus:border-ink focus:outline-none";
@@ -19,7 +20,11 @@ export default function LeakAuditForm() {
     setBusy(true);
     setError(null);
     const form = new FormData(e.currentTarget);
-    const data = Object.fromEntries(form.entries());
+    const attribution = getAttribution();
+    const data = {
+      ...Object.fromEntries(form.entries()),
+      attribution,
+    };
 
     try {
       const res = await fetch("/api/leak-audit", {
@@ -31,7 +36,10 @@ export default function LeakAuditForm() {
         const body = await res.json().catch(() => null);
         throw new Error(body?.error ?? "Something went wrong. Try again.");
       }
-      track("audit_submitted", { industry: String(data.industry ?? "") });
+      track("audit_submitted", {
+        industry: String(data.industry ?? ""),
+        ...attribution,
+      });
       router.push("/leak-audit/thanks");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
