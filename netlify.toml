@@ -1,0 +1,37 @@
+# Deploy determinism (Brief 2, Task 1).
+# The plain `build` script only: `build:local` and `dev` use Windows
+# `set` syntax and fail on Netlify's Linux builders.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  # Major version this project is developed on
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ---------------------------------------------------------------------------
+# 301 redirect map (Brief 2, Task 2).
+# The previous deploy was a single-page build navigated by anchors
+# (#problem, #system, ...), so it exposed no legacy content paths.
+# The rules below cover index variants and crawler-guess paths only.
+# Anything else falls through to Next.js routing, which serves the
+# branded 404 page with a real 404 status. No soft redirects to home.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/index"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
