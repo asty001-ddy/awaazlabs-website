@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Radar } from "lucide-react";
 import { LINKS } from "@/lib/site";
 import { EASE_OUT } from "./motion-primitives";
+import ChannelOrchestra from "./ChannelOrchestra";
 
 /* Rotating loss channels. Cadence ~1.2s per the hero ticker spec. */
 const PHRASES = [
@@ -16,44 +17,6 @@ const PHRASES = [
   "a silent WhatsApp.",
 ];
 const TICKER_MS = 1200;
-
-/*
- * Illustrative front-desk feed. Times and entries are sample UI, not claimed
- * results. Every action mirrors an approved capability: answer, intake, book,
- * remind, follow up by email, recover no-shows, reengage, request reviews.
- */
-const FEED = [
-  {
-    time: "9:47 PM",
-    channel: "Call",
-    action: "Answered in Arabic. Consultation booked for Tuesday.",
-  },
-  {
-    time: "11:03 PM",
-    channel: "WhatsApp",
-    action: "Intake completed. Added to tomorrow's calendar.",
-  },
-  {
-    time: "7:12 AM",
-    channel: "Email",
-    action: "Follow-up sent. Reply captured and routed.",
-  },
-  {
-    time: "10:30 AM",
-    channel: "No-show",
-    action: "Called back. Rebooked for Thursday.",
-  },
-  {
-    time: "89 days quiet",
-    channel: "Lapsed",
-    action: "Reengagement message sent, with an offer to rebook.",
-  },
-  {
-    time: "After visit",
-    channel: "Review",
-    action: "Thank-you sent. Google review requested.",
-  },
-];
 
 function Ticker() {
   const [index, setIndex] = useState(0);
@@ -76,7 +39,7 @@ function Ticker() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: reduced ? 0 : "-70%", opacity: 0 }}
           transition={{ duration: 0.3, ease: EASE_OUT }}
-          className="block"
+          className="block whitespace-nowrap"
         >
           {PHRASES[index]}
         </motion.span>
@@ -128,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.08, ease: EASE_OUT }}
-            className="mt-8 font-display text-[44px] leading-[1.02] font-medium tracking-tight text-ink sm:text-[64px] lg:text-[76px]"
+            className="mt-8 font-display text-[clamp(26px,8.5vw,44px)] leading-[1.02] font-medium tracking-tight text-ink sm:text-[clamp(44px,6.5vw,64px)] lg:text-[clamp(48px,5.8vw,76px)]"
           >
             Never lose another customer to
             <Ticker />
@@ -183,12 +146,11 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* Front desk feed: monochrome, ruled, illustrative */}
+        {/* Channel orchestration: every channel in, one streamlined desk out */}
         <motion.aside
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: EASE_OUT }}
-          aria-label="Illustration of the front desk working around the clock"
           className="card beam self-center overflow-hidden"
         >
           <div className="chrome justify-between !py-4">
@@ -207,31 +169,9 @@ export default function Hero() {
               <span className="label text-faint">Live, 24/7</span>
             </span>
           </div>
-          <ul>
-            {FEED.map((item, i) => (
-              <motion.li
-                key={item.time}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.55 + i * 0.14,
-                  ease: EASE_OUT,
-                }}
-                className="border-b border-hairline px-5 py-4 last:border-0"
-              >
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="label text-faint">{item.channel}</span>
-                  <span className="text-xs text-faint tabular-nums">
-                    {item.time}
-                  </span>
-                </div>
-                <p className="mt-1.5 text-sm leading-snug text-ink">
-                  {item.action}
-                </p>
-              </motion.li>
-            ))}
-          </ul>
+          <div className="gridlines px-3 py-5 sm:px-4">
+            <ChannelOrchestra />
+          </div>
         </motion.aside>
       </div>
     </section>

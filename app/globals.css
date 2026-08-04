@@ -269,6 +269,13 @@ body {
   }
 }
 
+/* Orchestration pulses stop for reduced-motion users; beams stay static */
+@media (prefers-reduced-motion: reduce) {
+  .orchestra-dot {
+    display: none;
+  }
+}
+
 /* Dark sheen for light buttons on dark panels */
 .btn-shimmer-dark::after {
   background: linear-gradient(
