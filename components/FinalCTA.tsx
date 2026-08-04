@@ -36,7 +36,7 @@ export default function FinalCTA() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2, ease: EASE_OUT }}
-            className="label mt-12 inline-flex cursor-pointer items-center gap-3 rounded-full bg-paper py-3.5 pr-8 pl-3.5 text-ink transition-opacity duration-200 hover:opacity-90"
+            className="btn-shimmer btn-shimmer-dark label mt-12 inline-flex cursor-pointer items-center gap-3 rounded-full bg-paper py-3.5 pr-8 pl-3.5 text-ink transition-opacity duration-200 hover:opacity-90"
           >
             <span className="chip-amber relative" aria-hidden>
               <Radar size={15} strokeWidth={2.2} />

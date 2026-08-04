@@ -109,9 +109,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE_OUT }}
-            className="label text-faint"
+            className="inline-flex items-center gap-2.5 rounded-full border border-hairline bg-white/70 py-2 pr-4 pl-3 backdrop-blur-sm"
           >
-            The 24/7 AI front desk
+            <span className="relative flex h-2 w-2" aria-hidden>
+              <span className="h-2 w-2 rounded-full bg-signal-bright" />
+              <motion.span
+                animate={{ scale: [1, 2.2], opacity: [0.6, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                className="absolute inset-0 rounded-full bg-signal-bright"
+              />
+            </span>
+            <span className="label text-ink-soft">
+              The 24/7 AI front desk, live on 3 continents
+            </span>
           </motion.p>
 
           <motion.h1
@@ -145,7 +155,7 @@ export default function Hero() {
               href={LINKS.leakAudit}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="label inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-ink py-3 pr-7 pl-3 text-center text-paper transition-opacity duration-200 hover:opacity-85"
+              className="btn-shimmer label inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-ink py-3 pr-7 pl-3 text-center text-paper transition-opacity duration-200 hover:opacity-85"
             >
               <span className="chip-amber" aria-hidden>
                 <Radar size={15} strokeWidth={2.2} />
@@ -179,7 +189,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: EASE_OUT }}
           aria-label="Illustration of the front desk working around the clock"
-          className="card self-center overflow-hidden"
+          className="card beam self-center overflow-hidden"
         >
           <div className="chrome justify-between !py-4">
             <span className="flex items-center gap-1.5">

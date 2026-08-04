@@ -80,7 +80,7 @@ export default function HowItWorks() {
             href={LINKS.leakAudit}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="label mt-14 inline-flex cursor-pointer items-center gap-3 rounded-full bg-ink py-3 pr-7 pl-3 text-paper transition-opacity duration-200 hover:opacity-85"
+            className="btn-shimmer label mt-14 inline-flex cursor-pointer items-center gap-3 rounded-full bg-ink py-3 pr-7 pl-3 text-paper transition-opacity duration-200 hover:opacity-85"
           >
             <span className="chip-amber" aria-hidden>
               <Radar size={15} strokeWidth={2.2} />

@@ -34,8 +34,15 @@ function FinovaMark() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-void-line bg-void py-12 text-void-muted">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-start justify-between gap-8 px-5 sm:flex-row sm:items-center lg:px-8">
+    <footer className="overflow-hidden border-t border-void-line bg-void pt-16 pb-10 text-void-muted">
+      {/* Oversized editorial wordmark, barely-there, anchors the page */}
+      <p
+        aria-hidden
+        className="mx-auto -mb-4 max-w-[1200px] px-5 text-center font-display text-[13.5vw] leading-[0.85] font-semibold tracking-tight whitespace-nowrap text-paper/[0.05] select-none lg:px-8"
+      >
+        Awaaz Labs
+      </p>
+      <div className="mx-auto flex max-w-[1200px] flex-col items-start justify-between gap-8 border-t border-void-line/60 px-5 pt-10 sm:flex-row sm:items-center lg:px-8">
         <div>
           <p className="font-display text-lg font-semibold tracking-tight text-paper">
             Awaaz Labs

@@ -10,7 +10,7 @@ import Proof from "@/components/Proof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import { MotionProvider } from "@/components/motion-primitives";
+import { MotionProvider, PointerGlow } from "@/components/motion-primitives";
 import { FAQS } from "@/lib/faqs";
 
 const organizationSchema = {
@@ -79,6 +79,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
+      <PointerGlow />
       <Nav />
       <main>
         <Hero />

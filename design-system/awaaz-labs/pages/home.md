@@ -55,3 +55,16 @@ SynthAI) plus the generator's Bento Grids / monochrome recommendation.
 - Problem benchmarks carry animated proportion bars (magenta on ink).
 - Nav: The leak / The fix / Setup / Who it's for / Results / FAQ.
 - Hero has a slow-drifting magenta glow (24s loop).
+
+## v2.3 addendum: component-level UI upgrade (21st.dev informed)
+
+- Nav is a floating glass pill (top-4, blur, full radius, shadow), links get
+  hover pills, CTA inside the nav pill.
+- Hero: announcement badge (pulsing magenta dot + mono label) replaces the
+  plain eyebrow; feed card wears an orbiting border beam (conic gradient,
+  magenta-to-amber, 7s, reduced-motion safe).
+- All dark pill CTAs carry a periodic shimmer sweep (.btn-shimmer;
+  .btn-shimmer-dark variant for paper buttons on ink).
+- Every .card-lift has a pointer-following magenta spotlight (PointerGlow
+  sets --mx/--my; CSS ::after radial).
+- Footer opens with an oversized 13.5vw wordmark at 5% paper opacity.
