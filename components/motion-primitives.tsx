@@ -210,14 +210,13 @@ export function CountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const reduced = useReducedMotion();
-  const [value, setValue] = useState(0);
+  // Server-rendered HTML must show the real value: crawlers, answer
+  // engines and link-preview bots read static output. The count-up is
+  // a hydration-only effect that resets to 0 and animates back up.
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
-    if (!inView) return;
-    if (reduced) {
-      setValue(to);
-      return;
-    }
+    if (!inView || reduced) return;
     const controls = animate(0, to, {
       duration,
       ease: EASE_OUT,
