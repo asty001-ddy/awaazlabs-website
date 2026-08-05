@@ -74,11 +74,13 @@ export const NAV = {
       label: "Missed call cost calculator",
       href: "/tools/missed-call-cost-calculator",
     },
-    { label: "Guides and blog", href: "/blog" },
+    { label: "Front desk health score", href: "/tools/front-desk-health-score" },
+    { label: "Build your agent", href: "/tools/build-your-agent" },
   ],
   single: [
+    { label: "Platform", href: "/platform" },
     { label: "Customers", href: "/customers" },
-    { label: "Demo", href: "/demo" },
+    { label: "Blog", href: "/blog" },
   ],
 } as const;
 
@@ -101,11 +103,22 @@ export const FOOTER_LINKS = [
   {
     heading: "Product",
     links: [
+      { label: "Platform", href: "/platform" },
       { label: "Industries", href: "/industries" },
+      { label: "Integrations", href: "/integrations" },
       { label: "Tools", href: "/tools" },
       { label: "Customers", href: "/customers" },
       { label: "Demo", href: "/demo" },
       { label: "Security", href: "/security" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Partners", href: "/partners" },
+      { label: "Learn", href: "/learn" },
+      { label: "Vs hiring a receptionist", href: "/compare/hiring-a-receptionist" },
     ],
   },
   {

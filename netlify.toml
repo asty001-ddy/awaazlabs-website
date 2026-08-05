@@ -36,13 +36,8 @@
   to = "/"
   status = 301
 
-# Old awaazlabs.io routes (competitive teardown 3c). /partners points at
-# root until the Phase 2 partners page ships; update it then.
-
-[[redirects]]
-  from = "/partners"
-  to = "/"
-  status = 301
+# Old awaazlabs.io routes (competitive teardown 3c). /partners is a
+# real page as of Phase 2, so it no longer redirects.
 
 [[redirects]]
   from = "/resources"

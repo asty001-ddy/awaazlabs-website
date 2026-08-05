@@ -53,7 +53,7 @@ export default function Footer() {
         Awaaz Labs
       </p>
 
-      <div className="mx-auto grid max-w-[1200px] gap-10 border-t border-void-line/60 px-5 pt-10 sm:grid-cols-2 lg:grid-cols-6 lg:px-8">
+      <div className="mx-auto grid max-w-[1200px] gap-10 border-t border-void-line/60 px-5 pt-10 sm:grid-cols-2 lg:grid-cols-7 lg:px-8">
         <div className="lg:col-span-2">
           <p className="font-display text-lg font-semibold tracking-tight text-paper">
             Awaaz Labs
