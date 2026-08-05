@@ -28,6 +28,15 @@ export default function AboutPage() {
       <section className="mx-auto max-w-[760px] px-5 pb-14 lg:px-8">
         <div className="space-y-5 text-lg leading-relaxed text-ink-soft">
           <p>
+            The vision is simple: a business should be accessible to every
+            customer it wants to serve. Not for the 40 hours a desk is
+            staffed, but for all 168 hours a week that customers actually
+            reach out. Every call answered, every message met, no customer
+            left unattended, and no owner punished for being busy doing the
+            work. That is the standard we build toward, in every language
+            their customers speak.
+          </p>
+          <p>
             We are a product of{" "}
             <a
               href="https://finovasolutions.tech"
@@ -49,6 +58,12 @@ export default function AboutPage() {
             offer any business is a free audit of what they are already
             losing, because the honest starting point is the leak, not the
             pitch.
+          </p>
+          <p>
+            And while our pages go deep on clinics, brokerages, restaurants
+            and trades, the product is for any business that lives on inbound
+            conversations. If your customers call, message or book, and it
+            hurts when they cannot reach you, this was built for you.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-3 gap-6 border-y border-hairline py-8">

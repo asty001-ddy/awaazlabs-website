@@ -101,8 +101,8 @@ export default function Hero() {
           {/* No entrance animation: the page's guaranteed LCP paint */}
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft">
             It answers, books, reminds, recovers and collects reviews. Every
-            channel, every hour, every language. You just show up to a fuller
-            calendar.
+            channel, every hour, every language. Built for any business that
+            lives on inbound calls: you just show up to a fuller calendar.
           </p>
 
           <div className="anim-fade-up anim-d3 mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
