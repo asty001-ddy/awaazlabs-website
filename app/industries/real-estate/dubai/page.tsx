@@ -32,7 +32,7 @@ const LOCAL_BLOCKS = [
   {
     label: "Local rules",
     title: "Fits how Dubai brokerages actually run",
-    body: "In-region data residency keeps client conversations in-country, with consent-aware call handling and a full audit trail. Listing facts come from your live inventory, and anything contractual routes straight to your licensed agents.",
+    body: "In-region data residency keeps client conversations in-country, with consent-aware call handling and a full audit trail. Listing facts come from your live inventory, and anything contractual routes straight to your licensed agents. Full compliance documentation is available to your DPO or compliance lead on request.",
   },
   {
     label: "Local proof",

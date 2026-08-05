@@ -35,3 +35,43 @@
   from = "/home"
   to = "/"
   status = 301
+
+# Old awaazlabs.io routes (competitive teardown 3c). /partners points at
+# root until the Phase 2 partners page ships; update it then.
+
+[[redirects]]
+  from = "/partners"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/resources"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/customers"
+  status = 301
+
+[[redirects]]
+  from = "/legal/privacy"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/legal/terms"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/legal/cookies"
+  to = "/privacy"
+  status = 301
+
+# Renamed tool slug (also handled by next.config redirects)
+
+[[redirects]]
+  from = "/tools/missed-revenue-calculator"
+  to = "/tools/missed-call-cost-calculator"
+  status = 301

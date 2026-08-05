@@ -65,6 +65,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  // Search engine ownership verification: paste tokens in the deploy env
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } }
+      : {}),
+  },
 };
 
 export default function RootLayout({

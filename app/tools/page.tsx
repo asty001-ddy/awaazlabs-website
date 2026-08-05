@@ -21,14 +21,14 @@ export default function ToolsPage() {
       />
       <div className="mx-auto grid max-w-[1200px] gap-5 px-5 pb-20 sm:grid-cols-2 lg:px-8">
         <Link
-          href="/tools/missed-revenue-calculator"
+          href="/tools/missed-call-cost-calculator"
           className="card card-lift group p-7"
         >
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-fuchsia-100 text-fuchsia-700">
             <Calculator size={18} aria-hidden />
           </span>
           <h2 className="mt-5 flex items-center gap-2 font-display text-2xl font-medium tracking-tight text-ink">
-            Missed revenue calculator
+            Missed call cost calculator
             <ArrowUpRight size={18} className="text-signal opacity-0 transition-opacity group-hover:opacity-100" aria-hidden />
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">

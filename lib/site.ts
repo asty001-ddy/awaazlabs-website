@@ -71,8 +71,8 @@ export const NAV = {
   toolsHub: "/tools",
   tools: [
     {
-      label: "Missed revenue calculator",
-      href: "/tools/missed-revenue-calculator",
+      label: "Missed call cost calculator",
+      href: "/tools/missed-call-cost-calculator",
     },
     { label: "Guides and blog", href: "/blog" },
   ],
@@ -113,7 +113,7 @@ export const FOOTER_LINKS = [
     links: [
       { label: "Free leak audit", href: "/leak-audit" },
       { label: "Book a free sales call", href: "/book-a-call" },
-      { label: "Missed revenue calculator", href: "/tools/missed-revenue-calculator" },
+      { label: "Missed call cost calculator", href: "/tools/missed-call-cost-calculator" },
       { label: "Guides and blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],

@@ -12,7 +12,7 @@ const DESTINATIONS = [
   { label: "Real estate, Dubai", href: "/industries/real-estate/dubai", terms: "dubai real estate property" },
   { label: "Free leak audit", href: "/leak-audit", terms: "audit leak free start" },
   { label: "Book a free sales call", href: "/book-a-call", terms: "call book sales demo talk" },
-  { label: "Missed revenue calculator", href: "/tools/missed-revenue-calculator", terms: "calculator revenue tools missed" },
+  { label: "Missed call cost calculator", href: "/tools/missed-call-cost-calculator", terms: "calculator revenue cost tools missed" },
   { label: "Tools", href: "/tools", terms: "tools free" },
   { label: "Customers", href: "/customers", terms: "customers proof case studies" },
   { label: "Demo recordings", href: "/demo", terms: "demo hear listen audio" },

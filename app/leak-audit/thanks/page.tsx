@@ -36,7 +36,8 @@ export default function ThanksPage() {
           </p>
           <p>
             You will receive a confirmation email now, and your one-page
-            findings report within a few business days.
+            findings report within 2 business days. It stays confidential:
+            never shared with competitors.
           </p>
         </div>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">

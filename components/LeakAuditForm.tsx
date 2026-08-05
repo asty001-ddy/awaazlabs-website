@@ -118,7 +118,8 @@ export default function LeakAuditForm() {
       <p className="mt-4 text-[13px] leading-relaxed text-faint">
         We call and message your business like a customer would, log where
         inquiries die, and send you the findings on one page. Free. No pitch
-        attached.
+        attached. Your report arrives within 2 business days and stays
+        confidential: never shared with competitors.
       </p>
     </form>
   );

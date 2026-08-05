@@ -11,7 +11,7 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/industries/real-estate", priority: 0.9 },
   { path: "/industries/real-estate/dubai", priority: 0.9 },
   { path: "/tools", priority: 0.7 },
-  { path: "/tools/missed-revenue-calculator", priority: 0.8 },
+  { path: "/tools/missed-call-cost-calculator", priority: 0.8 },
   { path: "/leak-audit", priority: 0.9 },
   { path: "/book-a-call", priority: 0.8 },
   { path: "/demo", priority: 0.7 },

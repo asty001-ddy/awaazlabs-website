@@ -8,6 +8,7 @@ import Industries from "@/components/Industries";
 import Proof from "@/components/Proof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import { HearIt, MiniCalcTeaser, FounderBlock } from "@/components/home-cro";
 import { PointerGlow } from "@/components/motion-primitives";
 import { FAQS } from "@/lib/faqs";
 
@@ -72,10 +73,16 @@ export default function Home() {
           <Solution />
         </div>
         <div className="cv-auto">
+          <HearIt />
+        </div>
+        <div className="cv-auto">
           <HowItWorks />
         </div>
         <div className="cv-auto">
           <CoverageMath />
+        </div>
+        <div className="cv-auto">
+          <MiniCalcTeaser />
         </div>
         <div className="cv-auto">
           <Industries />
@@ -85,6 +92,9 @@ export default function Home() {
         </div>
         <div className="cv-auto">
           <FAQ />
+        </div>
+        <div className="cv-auto">
+          <FounderBlock />
         </div>
         <div className="cv-auto">
           <FinalCTA />

@@ -75,8 +75,9 @@ export default function SecurityPage() {
         </div>
         <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
           Consent and recording practices are configured per region during
-          onboarding, following local requirements. Ask us for the specifics of
-          your market on a call.
+          onboarding, following local requirements. We can share full
+          compliance documentation with your medical director or DPO on
+          request. Ask us for the specifics of your market on a call.
         </p>
       </section>
       <CTABand

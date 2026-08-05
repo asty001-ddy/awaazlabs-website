@@ -21,7 +21,7 @@ const STEPS = [
   },
   {
     title: "You get the numbers on one page",
-    body: "A short, specific report of your leak points. Yours to keep whether or not we ever talk again.",
+    body: "A short, specific report of your leak points, delivered within 2 business days. Confidential, never shared with competitors. Yours to keep whether or not we ever talk again.",
   },
 ];
 

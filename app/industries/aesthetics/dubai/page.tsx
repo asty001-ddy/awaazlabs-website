@@ -32,7 +32,7 @@ const LOCAL_BLOCKS = [
   {
     label: "Local rules",
     title: "Built for how Dubai clinics operate",
-    body: "In-region data residency keeps client conversations in-country. Call handling follows consent-aware recording practice, and anything clinical routes to your licensed practitioners. The agent works your clinic's real hours: late evenings, weekends, and Ramadan schedules included.",
+    body: "In-region data residency keeps client conversations in-country. Call handling follows consent-aware recording practice, and anything clinical routes to your licensed practitioners. We can share full compliance documentation with your medical director or DPO on request. The agent works your clinic's real hours: late evenings, weekends, and Ramadan schedules included.",
   },
   {
     label: "Local proof",

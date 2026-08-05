@@ -58,7 +58,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "What does a missed call actually cost?" },
       {
         type: "p",
-        text: "It depends on your volume, your booking rate and your average appointment value, which is why averages mislead. The fastest way to get a number that means something is the free [missed revenue calculator](/tools/missed-revenue-calculator): your inquiries, your values, on-screen result.",
+        text: "It depends on your volume, your booking rate and your average appointment value, which is why averages mislead. The fastest way to get a number that means something is the free [missed revenue calculator](/tools/missed-call-cost-calculator): your inquiries, your values, on-screen result.",
       },
       { type: "h2", text: "How do businesses close the gap?" },
       {
@@ -98,7 +98,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Do you have to do this by hand?" },
       {
         type: "p",
-        text: "No. The free [missed revenue calculator](/tools/missed-revenue-calculator) runs this exact math with sliders for the benchmark ranges. The result stays on your screen, no email required.",
+        text: "No. The free [missed revenue calculator](/tools/missed-call-cost-calculator) runs this exact math with sliders for the benchmark ranges. The result stays on your screen, no email required.",
       },
       { type: "h2", text: "How accurate is the estimate?" },
       {
@@ -147,7 +147,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "So should you hire or automate?" },
       {
         type: "p",
-        text: "Both, usually. Keep humans on judgment and hospitality; put coverage on software. The way to decide with data instead of instinct: run the [missed revenue calculator](/tools/missed-revenue-calculator) to size your leak, get the [free leak audit](/leak-audit) to verify it, then compare that number against a salary. If you run a clinic, the [aesthetics page](/industries/aesthetics) shows what full coverage looks like in practice.",
+        text: "Both, usually. Keep humans on judgment and hospitality; put coverage on software. The way to decide with data instead of instinct: run the [missed revenue calculator](/tools/missed-call-cost-calculator) to size your leak, get the [free leak audit](/leak-audit) to verify it, then compare that number against a salary. If you run a clinic, the [aesthetics page](/industries/aesthetics) shows what full coverage looks like in practice.",
       },
     ],
   },
