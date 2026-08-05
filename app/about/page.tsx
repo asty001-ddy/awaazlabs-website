@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, PhotoBand } from "@/components/subpage";
 import { FounderBlock } from "@/components/home-cro";
 
 export const metadata: Metadata = {
@@ -73,6 +73,11 @@ export default function AboutPage() {
           .
         </p>
       </section>
+      <PhotoBand
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+        alt="Team working together around laptops"
+        caption="Built by Finova Solutions, shipped on three continents"
+      />
       <TrustStrip />
       <FounderBlock />
       <CTABand />

@@ -191,6 +191,73 @@ export function FaqBlock({ faqs, title = "Questions" }: { faqs: Faq[]; title?: s
   );
 }
 
+import { POSTS } from "@/lib/posts";
+
+/**
+ * Guides that rank the tool (owner directive): each tool page carries
+ * the posts targeting its query cluster, passing relevance and links
+ * both ways between the tool and the blog.
+ */
+export function RelatedGuides({ slugs }: { slugs: string[] }) {
+  const posts = POSTS.filter((p) => slugs.includes(p.slug));
+  if (!posts.length) return null;
+
+  return (
+    <section className="mx-auto max-w-[1200px] border-t border-hairline px-5 py-14 lg:px-8">
+      <p className="label text-faint">Guides for this tool</p>
+      <div className="mt-6 grid gap-5 md:grid-cols-3">
+        {posts.map((p) => (
+          <Link
+            key={p.slug}
+            href={`/blog/${p.slug}`}
+            className="card card-lift flex flex-col p-6"
+          >
+            <p className="font-display text-lg leading-snug font-medium tracking-tight text-ink">
+              {p.title}
+            </p>
+            <p className="mt-2 flex-1 text-[13px] leading-relaxed text-ink-soft">
+              {p.description}
+            </p>
+            <p className="label mt-4 text-signal">{p.readMinutes} minute read</p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Editorial photo band: full-width rounded image with a mono caption.
+ * Always below the fold, always lazy, explicit aspect to prevent CLS.
+ */
+export function PhotoBand({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) {
+  return (
+    <figure className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
+      <div className="relative aspect-[21/9] overflow-hidden rounded-2xl border border-hairline">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${src}?auto=format&fit=crop&w=1600&q=70`}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          width={1600}
+          height={686}
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <figcaption className="label mt-3 text-faint">{caption}</figcaption>
+    </figure>
+  );
+}
+
 /** Ruled feature list used across industry pages. */
 export function RuledList({
   items,

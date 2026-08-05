@@ -191,4 +191,48 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "front-desk-health-check",
+    title: "Front Desk Health Check: 8 Questions Every Owner Should Ask",
+    description:
+      "A practical self-audit for appointment-based businesses: the eight questions that reveal whether your front desk is capturing inquiries or leaking them, plus a free scored version.",
+    targetQuery: "front desk health check",
+    date: "2026-08-05",
+    readMinutes: 4,
+    body: [
+      {
+        type: "p",
+        text: "A front desk health check is a structured self-audit of how your business handles inbound inquiries: calls, messages, follow-ups and reviews. Eight questions cover the failure points that cost appointment-based businesses the most bookings.",
+      },
+      { type: "h2", text: "What should a front desk health check cover?" },
+      {
+        type: "ul",
+        items: [
+          "After-hours calls: answered, voicemailed, or ringing out?",
+          "WhatsApp response time: minutes or whenever someone checks?",
+          "Simultaneous calls: does the second caller get through?",
+          "No-shows: does anyone call them back, every time?",
+          "Web forms: first reply in minutes or days?",
+          "Lapsed customers: is there any reactivation rhythm?",
+          "Reviews: asked for every visit, or when staff remember?",
+          "Visibility: can you replay what was said last weekend?",
+        ],
+      },
+      { type: "h2", text: "How do you score it?" },
+      {
+        type: "p",
+        text: "Weight the questions by revenue impact and score out of 100. Above 80 is a tight ship; below 55 means nights, weekends and follow-through are leaking bookings weekly. The [front desk health score](/tools/front-desk-health-score) runs this exact scoring in about a minute, free, with an instant diagnosis and no email gate.",
+      },
+      { type: "h2", text: "What do most businesses score?" },
+      {
+        type: "p",
+        text: "Most appointment-based businesses cluster in the leaking-at-the-edges band: solid during opening hours, silent for the other 128 hours of the week. The benchmarks explain why: 23 to 42 percent of inbound calls are missed, and 78 percent of after-hours callers never leave a voicemail.",
+      },
+      { type: "h2", text: "What do you do with a low score?" },
+      {
+        type: "p",
+        text: "Verify it with real data before spending anything. The [free leak audit](/leak-audit) mystery-shops your channels at realistic hours and sends the findings within 2 business days. Then fix the biggest leak first: for most clinics that is after-hours capture, covered on the [aesthetics page](/industries/aesthetics). Put a money number on it with the [missed call cost calculator](/tools/missed-call-cost-calculator).",
+      },
+    ],
+  },
 ];

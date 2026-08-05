@@ -3,6 +3,13 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Editorial photography served from Unsplash's CDN (free commercial
+    // license). Next optimizes to AVIF/WebP with explicit dimensions.
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
+  },
   // Multiple lockfiles exist on this machine; pin tracing to the project root
   outputFileTracingRoot: path.join(__dirname),
   // Local verification builds use a separate dir (NEXT_DIST_DIR=.next-prod)

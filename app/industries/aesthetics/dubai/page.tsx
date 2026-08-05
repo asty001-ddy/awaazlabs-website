@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -121,6 +121,11 @@ export default function AestheticsDubaiPage() {
         </div>
       </section>
 
+      <PhotoBand
+        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+        alt="Dubai skyline at dusk"
+        caption="Dubai books beauty at midnight"
+      />
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Dubai questions" />
 

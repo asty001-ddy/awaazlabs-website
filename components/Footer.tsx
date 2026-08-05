@@ -1,44 +1,20 @@
 import Link from "next/link";
 import { TAGLINE, FOOTER_LINKS } from "@/lib/site";
 
-/*
- * Simplified rendition of the Finova Solutions shield mark.
- * Swap for the official asset by dropping finova.svg into /public
- * and replacing this component with an <img>.
- */
+/* Official Finova Solutions shield (public/finova-icon.png, from
+ * finovasolutions.tech). White chip keeps the navy legible on ink. */
 function FinovaMark() {
   return (
-    <svg
-      viewBox="0 0 44 50"
-      width="20"
-      height="23"
-      aria-hidden
-      className="shrink-0"
-    >
-      <defs>
-        <linearGradient id="finova-g1" x1="0" y1="0" x2="0.9" y2="1">
-          <stop offset="0" stopColor="#123057" />
-          <stop offset="0.55" stopColor="#1B5C93" />
-          <stop offset="1" stopColor="#2D9CD6" />
-        </linearGradient>
-        <linearGradient id="finova-g2" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#1B2A5E" />
-          <stop offset="1" stopColor="#2D9CD6" />
-        </linearGradient>
-      </defs>
-      {/* Left body of the shield with the integrated F */}
-      <path
-        d="M3 2 H17 V12 H10 V19 H16 V27 H10 V34.5 C10 38 13.5 41.5 22 45.5 V50 C9 44.5 3 38 3 28 Z"
-        fill="url(#finova-g1)"
+    <span className="inline-flex shrink-0 items-center justify-center rounded-md bg-white p-1">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/finova-icon.png"
+        alt=""
+        width={16}
+        height={18}
+        className="h-[18px] w-4 object-contain"
       />
-      {/* Top bar of the F reaching right */}
-      <path d="M20 2 H41 V12 H20 Z" fill="url(#finova-g2)" />
-      {/* Right bracket of the shield */}
-      <path
-        d="M34 15 H41 V28 C41 38 35 44.5 22 50 V45.5 C30.5 41.5 34 38 34 34.5 Z"
-        fill="url(#finova-g2)"
-      />
-    </svg>
+    </span>
   );
 }
 

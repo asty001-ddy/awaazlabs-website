@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HealthScoreQuiz from "@/components/HealthScoreQuiz";
-import { Breadcrumbs, PageHero, CTABand, JsonLd } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, JsonLd, RelatedGuides } from "@/components/subpage";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -39,6 +39,13 @@ export default function HealthScorePage() {
       <div className="mx-auto max-w-[860px] px-5 pb-20 lg:px-8">
         <HealthScoreQuiz />
       </div>
+      <RelatedGuides
+        slugs={[
+          "front-desk-health-check",
+          "missed-call-statistics",
+          "whatsapp-speed-to-lead",
+        ]}
+      />
       <CTABand
         title="The score is a symptom. The audit is the diagnosis."
         body="We contact your business like a customer would, at realistic hours, and send you the exact leaks on one page. Free, within 2 business days."

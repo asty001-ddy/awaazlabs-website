@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -117,6 +117,11 @@ export default function AestheticsPage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
+      <PhotoBand
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef"
+        alt="Treatment room in a modern aesthetics clinic"
+        caption="The consult room fills when the phone answers"
+      />
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Aesthetics questions" />
 

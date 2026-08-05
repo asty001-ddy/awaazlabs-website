@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MissedRevenueCalculator from "@/components/MissedRevenueCalculator";
-import { Breadcrumbs, PageHero, JsonLd, CTABand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, JsonLd, CTABand, RelatedGuides } from "@/components/subpage";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -49,6 +49,13 @@ export default function CalculatorPage() {
           .
         </p>
       </div>
+      <RelatedGuides
+        slugs={[
+          "calculate-revenue-lost-to-missed-calls",
+          "missed-call-statistics",
+          "ai-receptionist-vs-hiring-receptionist",
+        ]}
+      />
       <CTABand />
     </>
   );

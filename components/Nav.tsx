@@ -46,12 +46,14 @@ function Dropdown({
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
-  const mobileLinks = [
-    { label: "Industries", href: NAV.industriesHub },
-    ...NAV.industries,
-    { label: "Tools", href: NAV.toolsHub },
-    ...NAV.tools,
-    ...NAV.single,
+  /* Grouped mobile menu: hubs as section headers, children indented */
+  const mobileGroups: {
+    heading: string;
+    hub: string;
+    children: readonly { label: string; href: string }[];
+  }[] = [
+    { heading: "Industries", hub: NAV.industriesHub, children: NAV.industries },
+    { heading: "Tools", hub: NAV.toolsHub, children: NAV.tools },
   ];
 
   return (
@@ -111,12 +113,33 @@ export default function Nav() {
               className="mt-2 overflow-hidden rounded-2xl border border-hairline bg-paper/95 shadow-lg backdrop-blur-md lg:hidden"
             >
               <div className="flex flex-col px-5 py-3">
-                {mobileLinks.map((link) => (
+                {mobileGroups.map((group) => (
+                  <div key={group.heading} className="border-b border-hairline py-3">
+                    <Link
+                      href={group.hub}
+                      onClick={() => setOpen(false)}
+                      className="label block py-1.5 text-ink transition-colors hover:text-signal"
+                    >
+                      {group.heading}
+                    </Link>
+                    {group.children.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="block py-1.5 pl-4 text-[14px] font-medium text-ink-soft transition-colors hover:text-ink"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+                {NAV.single.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="label border-b border-hairline py-4 text-ink-soft transition-colors hover:text-ink"
+                    className="label border-b border-hairline py-4 text-ink transition-colors hover:text-signal"
                   >
                     {link.label}
                   </Link>

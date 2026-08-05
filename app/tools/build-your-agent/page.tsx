@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, RelatedGuides } from "@/components/subpage";
 import AgentEarlyAccess from "@/components/AgentEarlyAccess";
 
 export const metadata: Metadata = {
@@ -80,6 +80,13 @@ export default function BuildYourAgentPage() {
           .
         </p>
       </div>
+      <RelatedGuides
+        slugs={[
+          "ai-receptionist-vs-hiring-receptionist",
+          "whatsapp-speed-to-lead",
+          "front-desk-health-check",
+        ]}
+      />
       <CTABand />
     </>
   );

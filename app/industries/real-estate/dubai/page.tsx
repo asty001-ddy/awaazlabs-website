@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -121,6 +121,11 @@ export default function RealEstateDubaiPage() {
         </div>
       </section>
 
+      <PhotoBand
+        src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+        alt="Modern residential property exterior"
+        caption="From launch day to handover, every inquiry answered"
+      />
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Dubai questions" />
 
