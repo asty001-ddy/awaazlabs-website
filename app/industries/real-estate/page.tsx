@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -129,11 +129,14 @@ export default function RealEstatePage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
         alt="Bright modern apartment interior ready for viewing"
-        caption="Viewings start with an answered inquiry"
-      />
+        label="Speed to lead"
+      >
+        The buyer shortlisted three apartments tonight. He viewed the one
+        that answered.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Real estate questions" />
 

@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -124,25 +124,16 @@ export default function HomeServicesPage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
-      {/* Narrative block */}
-      <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
-        <div className="panel-void dots px-6 py-12 text-paper sm:px-12">
-          <p className="label text-void-muted">How it actually goes</p>
-          <p className="mt-5 max-w-3xl font-display text-2xl leading-relaxed font-medium tracking-tight sm:text-3xl">
-            Marcus is halfway up a ladder when his phone rings. It rings out.
-            The caller, a landlord with a burst heater and three more
-            properties, dials the next company on the list. They answer,
-            collect photos, book the callout. Marcus climbs down to a missed
-            call and a customer he will never know existed.
-          </p>
-        </div>
-      </section>
-
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
         alt="Tradesperson working on site"
-        caption="The crew works. The phone still answers."
-      />
+        label="How it actually goes"
+      >
+        Marcus is halfway up a ladder when his phone rings out. The caller, a
+        landlord with a burst heater and three more properties, dials the
+        next company. They answer, collect photos, book the callout. Marcus
+        climbs down to a customer he will never know existed.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Home services questions" />
 

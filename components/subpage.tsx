@@ -227,6 +227,53 @@ export function RelatedGuides({ slugs }: { slugs: string[] }) {
 }
 
 /**
+ * Text-over-photo editorial block: display typography laid over the
+ * image with a bottom-up ink scrim for guaranteed contrast. Below the
+ * fold, lazy, fixed aspect to prevent CLS.
+ */
+export function PhotoOverlay({
+  src,
+  alt,
+  label,
+  children,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-hairline sm:aspect-[16/9] lg:aspect-[21/10]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${src}?auto=format&fit=crop&w=1600&q=70`}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          width={1600}
+          height={762}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Two-layer scrim: a base tint for long text plus a bottom-up
+            gradient, so copy stays legible over bright image regions */}
+        <div aria-hidden className="absolute inset-0 bg-void/30" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-void/95 via-void/60 to-void/15"
+        />
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-12">
+          <p className="label text-paper/70">{label}</p>
+          <p className="mt-4 max-w-3xl font-display text-2xl leading-snug font-medium tracking-tight text-paper sm:text-3xl lg:text-4xl">
+            {children}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
  * Editorial photo band: full-width rounded image with a mono caption.
  * Always below the fold, always lazy, explicit aspect to prevent CLS.
  */

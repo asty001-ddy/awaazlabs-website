@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -124,25 +124,15 @@ export default function DentalPage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
-      {/* Narrative block */}
-      <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
-        <div className="panel-void dots px-6 py-12 text-paper sm:px-12">
-          <p className="label text-void-muted">How it actually goes</p>
-          <p className="mt-5 max-w-3xl font-display text-2xl leading-relaxed font-medium tracking-tight sm:text-3xl">
-            Omar cracks a molar on breakfast at 6:50 AM. He calls the nearest
-            practice: rings out. He calls the second: voicemail. The third
-            answers on the first ring, asks the three questions that matter,
-            and books him for 8:15. Two practices had earlier openings. Only
-            one had an open phone.
-          </p>
-        </div>
-      </section>
-
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95"
         alt="Modern dental treatment room"
-        caption="Chairs earn when the phone answers"
-      />
+        label="How it actually goes"
+      >
+        Omar cracks a molar at 6:50 AM. The first practice rings out, the
+        second goes to voicemail, the third answers on the first ring and
+        books him for 8:15. Two had earlier openings. One had an open phone.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Dental questions" />
 
