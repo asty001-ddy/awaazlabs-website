@@ -99,6 +99,13 @@ export default function AestheticsPage() {
               to={78}
               label="of after-hours callers never leave a voicemail"
             />
+            <p className="text-[13px] text-faint">
+              Sources on the{" "}
+              <Link href="/learn/missed-call-statistics" className="font-semibold text-ink underline underline-offset-4">
+                missed call statistics
+              </Link>{" "}
+              reference page.
+            </p>
           </div>
           <ChatVignette
             label="10:41 PM, WhatsApp"

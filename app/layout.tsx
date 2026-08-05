@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import { AttributionCapture, MotionProvider } from "@/components/motion-primitives";
-import { SITE_URL, TAGLINE } from "@/lib/site";
+import { SITE_URL, TAGLINE, IS_PRODUCTION } from "@/lib/site";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -45,8 +45,11 @@ export const metadata: Metadata = {
   // A1: single source of truth. SITE_URL falls back to the production
   // domain, so even an env-less deploy emits correct canonicals.
   metadataBase: new URL(SITE_URL),
-  // Homepage canonical; child routes override via pageMeta
+  // Homepage canonical; child routes override via pageMeta.
+  // Canonicals point at production in every context; combined with the
+  // staging noindex below, that protects prod from duplicate content.
   alternates: { canonical: "/" },
+  ...(IS_PRODUCTION ? {} : { robots: { index: false, follow: false } }),
   title: "AI Front Desk That Captures Every Missed Lead | Awaaz Labs",
   description:
     "Awaaz Labs answers every call, WhatsApp and text 24/7, books appointments, cuts no-shows and collects reviews. Stop losing customers to missed calls.",
@@ -93,6 +96,16 @@ export default function RootLayout({
           <Footer />
         </MotionProvider>
         <Analytics />
+        {/* A3: unreachable in production output; IS_PRODUCTION is
+            resolved at build time from the deploy context */}
+        {!IS_PRODUCTION && (
+          <div
+            role="status"
+            className="label fixed bottom-3 left-3 z-[100] rounded-full bg-amber px-3.5 py-2 text-ink shadow-lg"
+          >
+            Staging: not public
+          </div>
+        )}
       </body>
     </html>
   );

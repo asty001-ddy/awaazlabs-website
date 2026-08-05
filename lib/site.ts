@@ -17,6 +17,16 @@ export const TAGLINE = "Miss nothing. Book everything.";
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://awaazlabs.io";
 
+/**
+ * A1 (Brief 5): true only in Netlify's production context, or in a
+ * deliberate local prod build where CONTEXT is unset. Branch deploys
+ * and deploy previews are never production: they noindex, hide the
+ * sitemap, skip analytics, show the staging ribbon, and never forward
+ * form submissions.
+ */
+export const IS_PRODUCTION =
+  !process.env.CONTEXT || process.env.CONTEXT === "production";
+
 /** Phase 1 verticals with live pages. Vehicle recovery removed (GAP 13). */
 export const INDUSTRIES = [
   {
@@ -37,21 +47,21 @@ export const INDUSTRIES = [
     slug: "dental",
     name: "Dental clinics",
     short: "Dental",
-    live: false,
+    live: true,
     text: "Fewer empty chairs, fewer no-shows, more recalls completed.",
   },
   {
     slug: "restaurants",
     name: "Restaurants",
     short: "Restaurants",
-    live: false,
+    live: true,
     text: "Reservations taken on the third ring of a Friday rush.",
   },
   {
     slug: "home-services",
     name: "Home services",
     short: "Home services",
-    live: false,
+    live: true,
     text: "Jobs booked from the roof, the crawlspace, wherever you are.",
   },
 ] as const;
@@ -66,7 +76,10 @@ export const NAV = {
   industriesHub: "/industries",
   industries: [
     { label: "Aesthetics and med spas", href: "/industries/aesthetics" },
+    { label: "Dental clinics", href: "/industries/dental" },
     { label: "Real estate", href: "/industries/real-estate" },
+    { label: "Restaurants", href: "/industries/restaurants" },
+    { label: "Home services", href: "/industries/home-services" },
   ],
   toolsHub: "/tools",
   tools: [

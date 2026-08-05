@@ -104,6 +104,13 @@ export default function RealEstatePage() {
               </p>
               <p className="label mt-3 text-faint">Speed to lead</p>
             </div>
+            <p className="text-[13px] text-faint">
+              Sources on the{" "}
+              <Link href="/learn/missed-call-statistics" className="font-semibold text-ink underline underline-offset-4">
+                missed call statistics
+              </Link>{" "}
+              reference page.
+            </p>
           </div>
           <ChatVignette
             label="8:04 PM, listing inquiry"
