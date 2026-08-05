@@ -96,6 +96,16 @@ export default function RootLayout({
           <Footer />
         </MotionProvider>
         <Analytics />
+        {/* A3: unreachable in production output; IS_PRODUCTION is
+            resolved at build time from the deploy context */}
+        {!IS_PRODUCTION && (
+          <div
+            role="status"
+            className="label fixed bottom-3 left-3 z-[100] rounded-full bg-amber px-3.5 py-2 text-ink shadow-lg"
+          >
+            Staging: not public
+          </div>
+        )}
       </body>
     </html>
   );

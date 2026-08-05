@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { IS_PRODUCTION } from "@/lib/site";
 
 /**
  * Leak-audit intake. Forwards submissions to LEAK_AUDIT_WEBHOOK_URL
@@ -29,6 +30,13 @@ export async function POST(req: Request) {
     submitted_at: new Date().toISOString(),
     source: "website/leak-audit",
   };
+
+  // A4 (Brief 5): staging submissions never reach the CRM or trigger
+  // confirmation emails; they are logged for review instead.
+  if (!IS_PRODUCTION) {
+    console.log("STAGING leak-audit submission (not forwarded)", payload);
+    return NextResponse.json({ ok: true });
+  }
 
   const webhook = process.env.LEAK_AUDIT_WEBHOOK_URL;
   if (webhook) {
