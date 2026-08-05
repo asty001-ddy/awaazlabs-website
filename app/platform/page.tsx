@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, RuledList, FaqBlock } from "@/components/subpage";
 import ChannelOrchestra from "@/components/ChannelOrchestra";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Platform: The Complete AI Front Desk | Awaaz Labs",
   description:
     "One system that owns the whole inbound journey: capture, qualify, book, remind, recover, review, QA. Every channel, 24/7, in Arabic, English, Hindi and Urdu.",
-  alternates: { canonical: "/platform" },
-};
+  path: "/platform",
+});
 
 const JOURNEY = [
   {

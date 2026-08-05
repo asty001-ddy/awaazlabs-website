@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Contact | Awaaz Labs",
   description:
     "Reach Awaaz Labs: request a free leak audit, book a sales call, or email the team.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const ROUTES = [
   {

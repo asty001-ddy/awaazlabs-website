@@ -13,6 +13,24 @@
   package = "@netlify/plugin-nextjs"
 
 # ---------------------------------------------------------------------------
+# Host canonicalization (Brief 4, A5): exactly one host in the index.
+# netlify.app and www both 301 to the apex, forced so they run even
+# though the paths exist on the site.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "https://awaazlabs.netlify.app/*"
+  to = "https://awaazlabs.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.awaazlabs.io/*"
+  to = "https://awaazlabs.io/:splat"
+  status = 301
+  force = true
+
+# ---------------------------------------------------------------------------
 # 301 redirect map (Brief 2, Task 2).
 # The previous deploy was a single-page build navigated by anchors
 # (#problem, #system, ...), so it exposed no legacy content paths.

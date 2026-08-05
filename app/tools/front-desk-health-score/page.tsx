@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import HealthScoreQuiz from "@/components/HealthScoreQuiz";
 import { Breadcrumbs, PageHero, CTABand, JsonLd, RelatedGuides } from "@/components/subpage";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Front Desk Health Score (Free) | Awaaz Labs",
   description:
     "Eight questions, scored out of 100: how much of the week does your front desk actually cover? Instant diagnosis, no email required.",
-  alternates: { canonical: "/tools/front-desk-health-score" },
-};
+  path: "/tools/front-desk-health-score",
+});
 
 const schema = {
   "@context": "https://schema.org",

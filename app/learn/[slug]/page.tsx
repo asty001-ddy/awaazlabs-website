@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, PageHero, CTABand, JsonLd } from "@/components/subpage";
@@ -18,11 +19,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = LEARN_PAGES.find((p) => p.slug === slug);
   if (!page) return {};
-  return {
+  return pageMeta({
     title: `${page.title} | Awaaz Labs`,
     description: page.description,
-    alternates: { canonical: `/learn/${page.slug}` },
-  };
+    path: `/learn/${page.slug}`,
+  });
 }
 
 function InlineText({ text }: { text: string }) {

@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { CASE_STUDIES_LIVE } from "@/lib/flags";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Customers | Awaaz Labs",
   description:
     "Deployed in production across three continents: the United States, the United Arab Emirates and Pakistan.",
-  alternates: { canonical: "/customers" },
-};
+  path: "/customers",
+});
 
 const CASES = [
   {

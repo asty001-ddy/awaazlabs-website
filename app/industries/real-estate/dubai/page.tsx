@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "AI Front Desk for Dubai Real Estate | Awaaz Labs",
   description:
     "Dubai property moves at WhatsApp speed, across time zones and languages. The Awaaz Labs AI front desk answers every buyer and tenant inquiry 24/7 and books the viewing.",
-  alternates: { canonical: "/industries/real-estate/dubai" },
-};
+  path: "/industries/real-estate/dubai",
+});
 
 const schema = {
   "@context": "https://schema.org",

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight, Calculator, Bot, Activity, type LucideIcon } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Free Tools | Awaaz Labs",
   description:
     "Free tools for appointment-based businesses: missed call cost calculator, front desk health score, and a demo AI agent built from your own website.",
-  alternates: { canonical: "/tools" },
-};
+  path: "/tools",
+});
 
 const TOOLS: {
   href: string;

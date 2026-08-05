@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { POSTS } from "@/lib/posts";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Guides and Blog | Awaaz Labs",
   description:
     "Practical guides on missed calls, speed to lead and front desk coverage for appointment-based businesses.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

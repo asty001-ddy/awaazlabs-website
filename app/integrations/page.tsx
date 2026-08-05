@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { INTEGRATIONS } from "@/lib/integrations";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Integrations | Awaaz Labs",
   description:
     "What the Awaaz Labs AI front desk connects to: WhatsApp Business, Google Calendar, Calendly, and the systems your business already runs.",
-  alternates: { canonical: "/integrations" },
-};
+  path: "/integrations",
+});
 
 export default function IntegrationsHub() {
   return (

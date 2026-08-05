@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, PhotoBand } from "@/components/subpage";
 import { FounderBlock } from "@/components/home-cro";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "About | Awaaz Labs",
   description:
     "Awaaz Labs builds the AI front desk for appointment-based businesses. A Finova Solutions product, running in production on three continents.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const FACTS = [
   { stat: "3", label: "continents running the platform in production" },

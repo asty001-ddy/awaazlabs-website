@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip } from "@/components/subpage";
 import ChannelOrchestra from "@/components/ChannelOrchestra";
 import { INDUSTRIES } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Industries | Awaaz Labs",
   description:
     "The AI front desk for appointment-based businesses: aesthetics, dental, real estate, restaurants and home services.",
-  alternates: { canonical: "/industries" },
-};
+  path: "/industries",
+});
 
 export default function IndustriesPage() {
   return (

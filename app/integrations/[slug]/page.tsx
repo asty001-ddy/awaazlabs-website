@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd } from "@/components/subpage";
@@ -17,11 +18,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const integ = INTEGRATIONS.find((i) => i.slug === slug);
   if (!integ) return {};
-  return {
+  return pageMeta({
     title: `${integ.title} | Awaaz Labs`,
     description: integ.description,
-    alternates: { canonical: `/integrations/${integ.slug}` },
-  };
+    path: `/integrations/${integ.slug}`,
+  });
 }
 
 export default async function IntegrationPage({

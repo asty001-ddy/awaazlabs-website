@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "AI Front Desk for Aesthetics and Med Spas | Awaaz Labs",
   description:
     "Aesthetic clinics miss 40 to 60 percent of inquiries after hours. The Awaaz Labs AI front desk answers every call and message, books consultations and recovers no-shows, 24/7.",
-  alternates: { canonical: "/industries/aesthetics" },
-};
+  path: "/industries/aesthetics",
+});
 
 const schema = {
   "@context": "https://schema.org",

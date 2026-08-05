@@ -42,19 +42,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  // A1: single source of truth. SITE_URL falls back to the production
+  // domain, so even an env-less deploy emits correct canonicals.
+  metadataBase: new URL(SITE_URL),
+  // Homepage canonical; child routes override via pageMeta
+  alternates: { canonical: "/" },
   title: "AI Front Desk That Captures Every Missed Lead | Awaaz Labs",
   description:
     "Awaaz Labs answers every call, WhatsApp and text 24/7, books appointments, cuts no-shows and collects reviews. Stop losing customers to missed calls.",
-  keywords: [
-    "missed call recovery",
-    "AI receptionist",
-    "AI front desk",
-    "appointment booking automation",
-    "answer calls after hours",
-  ],
   openGraph: {
     title: "AI Front Desk That Captures Every Missed Lead | Awaaz Labs",
     description:

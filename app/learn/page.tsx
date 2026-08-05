@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { LEARN_PAGES } from "@/lib/learn";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Learn: Plain Answers on AI Front Desks | Awaaz Labs",
   description:
     "Plain-language definitions and honest comparisons: AI receptionists, what they cost, and the metrics that decide who gets the booking.",
-  alternates: { canonical: "/learn" },
-};
+  path: "/learn",
+});
 
 export default function LearnHub() {
   return (

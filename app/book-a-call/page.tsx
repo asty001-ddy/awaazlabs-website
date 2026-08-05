@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Breadcrumbs, PageHero, TrustStrip } from "@/components/subpage";
 import SchedulerEmbed from "@/components/SchedulerEmbed";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Book a Free Sales Call | Awaaz Labs",
   description:
     "30 minutes, no obligation. You leave with your leak numbers either way. Pick a time that works in your timezone.",
-  alternates: { canonical: "/book-a-call" },
-};
+  path: "/book-a-call",
+});
 
 const PROMISES = [
   "30 minutes, no obligation",

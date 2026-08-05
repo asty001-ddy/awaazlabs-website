@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import DemoPlayer from "@/components/DemoPlayer";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Hear the AI Take a Call | Awaaz Labs",
   description:
     "Listen to real sample calls: the Awaaz Labs front desk answering, qualifying and booking in English and Arabic.",
-  alternates: { canonical: "/demo" },
-};
+  path: "/demo",
+});
 
 export default function DemoPage() {
   return (

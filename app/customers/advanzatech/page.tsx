@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { CASE_STUDIES_LIVE } from "@/lib/flags";
@@ -7,10 +8,12 @@ import { CASE_STUDIES_LIVE } from "@/lib/flags";
  * NEXT_PUBLIC_CASE_STUDIES_LIVE until client sign-off is confirmed. */
 
 export const metadata: Metadata = {
-  title: "Advanzatech Case Study | Awaaz Labs",
-  description:
-    "How Advanzatech booked 70 meetings in month two with one Awaaz Labs deployment in the UAE.",
-  alternates: { canonical: "/customers/advanzatech" },
+  ...pageMeta({
+    title: "Advanzatech Case Study | Awaaz Labs",
+    description:
+      "How Advanzatech booked 70 meetings in month two with one Awaaz Labs deployment in the UAE.",
+    path: "/customers/advanzatech",
+  }),
   ...(CASE_STUDIES_LIVE ? {} : { robots: { index: false, follow: false } }),
 };
 

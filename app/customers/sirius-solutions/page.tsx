@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 import { CASE_STUDIES_LIVE } from "@/lib/flags";
@@ -7,10 +8,12 @@ import { CASE_STUDIES_LIVE } from "@/lib/flags";
  * NEXT_PUBLIC_CASE_STUDIES_LIVE until client sign-off is confirmed. */
 
 export const metadata: Metadata = {
-  title: "Sirius Solutions Global Case Study | Awaaz Labs",
-  description:
-    "Sirius Solutions Global runs Awaaz Labs live in production in the United States, handling around 50 calls a day.",
-  alternates: { canonical: "/customers/sirius-solutions" },
+  ...pageMeta({
+    title: "Sirius Solutions Global Case Study | Awaaz Labs",
+    description:
+      "Sirius Solutions Global runs Awaaz Labs live in production in the United States, handling around 50 calls a day.",
+    path: "/customers/sirius-solutions",
+  }),
   ...(CASE_STUDIES_LIVE ? {} : { robots: { index: false, follow: false } }),
 };
 

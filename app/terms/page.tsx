@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Breadcrumbs, PageHero } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Terms of Service | Awaaz Labs",
-  description: "Terms governing the use of the Awaaz Labs website and tools.",
-  alternates: { canonical: "/terms" },
-};
+  description:
+    "Terms governing the use of the Awaaz Labs website and tools.",
+  path: "/terms",
+});
 
 const SECTIONS = [
   {

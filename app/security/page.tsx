@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Server, HeartPulse, Award, Lock, ScrollText, UserCheck, type LucideIcon } from "lucide-react";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Security and Data Protection | Awaaz Labs",
   description:
     "In-region data residency, HIPAA-architected infrastructure, ISO 27001 aligned processes, end-to-end encryption and a full audit trail.",
-  alternates: { canonical: "/security" },
-};
+  path: "/security",
+});
 
 const CONTROLS: { icon: LucideIcon; tint: string; title: string; body: string }[] = [
   {

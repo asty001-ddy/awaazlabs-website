@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import MissedRevenueCalculator from "@/components/MissedRevenueCalculator";
 import { Breadcrumbs, PageHero, JsonLd, CTABand, RelatedGuides } from "@/components/subpage";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Missed Call Cost Calculator (Free) | Awaaz Labs",
   description:
     "Estimate what missed calls and unread messages cost your appointment-based business every month. On-screen result, no email required.",
-  alternates: { canonical: "/tools/missed-call-cost-calculator" },
-};
+  path: "/tools/missed-call-cost-calculator",
+});
 
 const schema = {
   "@context": "https://schema.org",

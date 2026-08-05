@@ -18,9 +18,14 @@ function Dropdown({
 }) {
   return (
     <div className="group relative">
-      {/* The trigger routes to the hub page; hovering reveals children */}
+      {/*
+       * Trigger routes to the hub; hover reveals children. Clicks blur
+       * the link: without it, :focus-within pinned the open panel after
+       * navigation until the user clicked elsewhere.
+       */}
       <Link
         href={hub}
+        onClick={(e) => e.currentTarget.blur()}
         className="label flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-2.5 text-faint transition-colors duration-200 group-hover:bg-ink/5 group-hover:text-ink"
       >
         {label}
@@ -32,6 +37,7 @@ function Dropdown({
             <Link
               key={item.href}
               href={item.href}
+              onClick={(e) => e.currentTarget.blur()}
               className="block rounded-xl px-3.5 py-2.5 text-[14px] font-medium text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
             >
               {item.label}

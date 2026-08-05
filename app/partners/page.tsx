@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Partners | Awaaz Labs",
   description:
     "Refer, implement or build alongside Awaaz Labs. Partnerships for agencies, consultants and technology teams serving appointment-based businesses.",
-  alternates: { canonical: "/partners" },
-};
+  path: "/partners",
+});
 
 const TRACKS = [
   {

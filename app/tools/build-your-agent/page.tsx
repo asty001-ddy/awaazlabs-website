@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, RelatedGuides } from "@/components/subpage";
 import AgentEarlyAccess from "@/components/AgentEarlyAccess";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Build Your Agent (Free) | Awaaz Labs",
   description:
     "Paste your website, get a demo AI agent trained on it, and talk to it in your browser. Voice, no phone number needed. Rolling out now.",
-  alternates: { canonical: "/tools/build-your-agent" },
-};
+  path: "/tools/build-your-agent",
+});
 
 const STEPS = [
   {

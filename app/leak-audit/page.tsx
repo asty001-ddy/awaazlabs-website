@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import LeakAuditForm from "@/components/LeakAuditForm";
 import { Breadcrumbs, PageHero, TrustStrip, FaqBlock } from "@/components/subpage";
 import { AuditReportCard } from "@/components/vignettes";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Get Your Free Leak Audit | Awaaz Labs",
   description:
     "We call and message your business exactly like a customer would, log every point where an inquiry dies, and send you the findings on one page. Free, global, no pitch.",
-  alternates: { canonical: "/leak-audit" },
-};
+  path: "/leak-audit",
+});
 
 const STEPS = [
   {
@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: "How long does the audit take?",
     answer:
-      "A few business days. We test your channels at realistic hours, including after hours, then write up the findings.",
+      "Within 2 business days. We test your channels at realistic hours, including after hours, then write up the findings.",
   },
   {
     question: "Do you audit businesses outside the Gulf?",

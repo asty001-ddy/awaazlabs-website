@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Check, Minus } from "lucide-react";
 import { Radar } from "lucide-react";
 import { Breadcrumbs, PageHero, FaqBlock } from "@/components/subpage";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Awaaz Labs vs Hiring a Receptionist | Awaaz Labs",
   description:
     "A receptionist covers about 40 of 168 weekly hours, one call at a time. The honest comparison, and why the answer is usually both.",
-  alternates: { canonical: "/compare/hiring-a-receptionist" },
-};
+  path: "/compare/hiring-a-receptionist",
+});
 
 /* Per master-build-v5: compare pages link only /book-a-call and /leak-audit */
 

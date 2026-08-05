@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, PageHero, CTABand, JsonLd } from "@/components/subpage";
@@ -17,11 +18,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = POSTS.find((p) => p.slug === slug);
   if (!post) return {};
-  return {
+  return pageMeta({
     title: `${post.title} | Awaaz Labs`,
     description: post.description,
-    alternates: { canonical: `/blog/${post.slug}` },
-  };
+    path: `/blog/${post.slug}`,
+  });
 }
 
 /** Renders body text with [label](href) inline links. */

@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "AI Front Desk for Dubai Aesthetics Clinics | Awaaz Labs",
   description:
     "Dubai aesthetic clinics compete on response speed across WhatsApp, calls and DMs, in Arabic and English. The Awaaz Labs AI front desk answers every inquiry 24/7 and books the consultation.",
-  alternates: { canonical: "/industries/aesthetics/dubai" },
-};
+  path: "/industries/aesthetics/dubai",
+});
 
 const schema = {
   "@context": "https://schema.org",

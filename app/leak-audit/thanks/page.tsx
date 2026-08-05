@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/subpage";
 import { LINKS } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Audit Requested | Awaaz Labs",
-  description: "Your free leak audit is in the queue.",
+  ...pageMeta({
+    title: "Audit Requested | Awaaz Labs",
+    description: "Your free leak audit is in the queue.",
+    path: "/leak-audit/thanks",
+  }),
   robots: { index: false },
-  alternates: { canonical: "/leak-audit/thanks" },
 };
 
 export default function ThanksPage() {
