@@ -226,9 +226,18 @@ export function CountUp({
   // engines and link-preview bots read static output. The count-up is
   // a hydration-only effect that resets to 0 and animates back up.
   const [value, setValue] = useState(to);
+  const mountedAt = useRef(0);
+
+  useEffect(() => {
+    mountedAt.current = performance.now();
+  }, []);
 
   useEffect(() => {
     if (!inView || reduced) return;
+    // Above-the-fold stats stay static: mutating large text after the
+    // first paint re-registers LCP on every frame and tanks the score.
+    // Only stats scrolled into view later get the count-up.
+    if (performance.now() - mountedAt.current < 1500) return;
     const controls = animate(0, to, {
       duration,
       ease: EASE_OUT,
