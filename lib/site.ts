@@ -93,6 +93,7 @@ export const NAV = {
   single: [
     { label: "Platform", href: "/platform" },
     { label: "Customers", href: "/customers" },
+    { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
   ],
 } as const;

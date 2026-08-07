@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -121,11 +121,14 @@ export default function RealEstateDubaiPage() {
         </div>
       </section>
 
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
         alt="Modern residential property exterior"
-        caption="From launch day to handover, every inquiry answered"
-      />
+        label="Launch to handover"
+      >
+        From launch day to handover, every inquiry answered, whatever time
+        zone its evening fell in.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Dubai questions" />
 

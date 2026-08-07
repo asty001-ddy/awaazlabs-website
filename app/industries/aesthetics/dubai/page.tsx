@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -121,11 +121,14 @@ export default function AestheticsDubaiPage() {
         </div>
       </section>
 
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
         alt="Dubai skyline at dusk"
-        caption="Dubai books beauty at midnight"
-      />
+        label="Dubai, after hours"
+      >
+        Dubai books beauty at midnight. The city does not wait for opening
+        hours, and neither should your front desk.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Dubai questions" />
 

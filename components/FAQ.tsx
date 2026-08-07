@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { Reveal } from "./motion-primitives";
 import { FAQS } from "@/lib/faqs";
@@ -36,21 +36,23 @@ function FaqItem({
           <Plus size={20} aria-hidden />
         </motion.span>
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="overflow-hidden"
-          >
-            <p className="max-w-2xl pb-6 text-[15px] leading-relaxed text-ink-soft">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/*
+       * SEO-critical: the answer is ALWAYS in the DOM (server-rendered
+       * for crawlers and AI engines) and only visually collapsed via
+       * the animatable grid-rows technique. Never conditionally render
+       * this block.
+       */}
+      <div
+        aria-hidden={!open}
+        className="grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.21,0.47,0.32,0.98)]"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
+      >
+        <div className="overflow-hidden">
+          <p className="max-w-2xl pb-6 text-[15px] leading-relaxed text-ink-soft">
+            {answer}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

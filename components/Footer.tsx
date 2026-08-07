@@ -35,6 +35,9 @@ export default function Footer() {
             Awaaz Labs
           </p>
           <p className="mt-1 text-sm">{TAGLINE}</p>
+          <p className="label mt-3 text-signal-bright">
+            No customer left unattended
+          </p>
           <a
             href="https://finovasolutions.tech"
             target="_blank"

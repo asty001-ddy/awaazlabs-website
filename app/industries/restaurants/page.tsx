@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -124,25 +124,16 @@ export default function RestaurantsPage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
-      {/* Narrative block */}
-      <section className="mx-auto max-w-[1200px] px-5 pb-16 lg:px-8">
-        <div className="panel-void dots px-6 py-12 text-paper sm:px-12">
-          <p className="label text-void-muted">How it actually goes</p>
-          <p className="mt-5 max-w-3xl font-display text-2xl leading-relaxed font-medium tracking-tight sm:text-3xl">
-            Layan is planning her father's sixtieth: a table for twelve,
-            Saturday. She messages three restaurants at 4 PM, mid-prep. Two
-            reply after close, apologizing. One answers in forty seconds,
-            holds the private corner, and asks about the cake. Guess where
-            twelve people had dinner.
-          </p>
-        </div>
-      </section>
-
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
         alt="Restaurant dining room set for service"
-        caption="Full tables start with answered phones"
-      />
+        label="How it actually goes"
+      >
+        Layan wants a table for twelve for her father's sixtieth. She
+        messages three restaurants at 4 PM, mid-prep. Two reply after close.
+        One answers in forty seconds, holds the private corner, and asks
+        about the cake. Guess where twelve people had dinner.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Restaurant questions" />
 

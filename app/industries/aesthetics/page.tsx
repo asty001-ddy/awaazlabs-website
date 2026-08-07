@@ -1,6 +1,6 @@
 import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
-import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoBand } from "@/components/subpage";
+import { Breadcrumbs, PageHero, CTABand, TrustStrip, FaqBlock, RuledList, JsonLd, PhotoOverlay } from "@/components/subpage";
 import { ChatVignette, BenchmarkStat } from "@/components/vignettes";
 import { SITE_URL } from "@/lib/site";
 
@@ -124,11 +124,14 @@ export default function AestheticsPage() {
         <RuledList items={CAPABILITIES} />
       </section>
 
-      <PhotoBand
+      <PhotoOverlay
         src="https://images.unsplash.com/photo-1540555700478-4be289fbecef"
         alt="Treatment room in a modern aesthetics clinic"
-        caption="The consult room fills when the phone answers"
-      />
+        label="The 11 PM consult"
+      >
+        She researched the treatment for six months. She booked in ninety
+        seconds, with the clinic that answered.
+      </PhotoOverlay>
       <TrustStrip />
       <FaqBlock faqs={FAQS} title="Aesthetics questions" />
 
