@@ -92,7 +92,7 @@ export default function Hero() {
           <h1 className="mt-8 font-display text-[clamp(26px,10.8cqw,76px)] leading-[1.02] font-medium tracking-tight text-ink">
             <span className="anim-mask-wrap block">
               <span className="anim-mask-up block">
-                Never lose another customer to
+                Never lose another customer to{" "}
                 <Ticker />
               </span>
             </span>

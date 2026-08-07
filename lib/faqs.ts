@@ -6,7 +6,7 @@ export const FAQS = [
   {
     question: "Will it sound like a robot?",
     answer:
-      "Call the demo line and decide for yourself. Customers regularly finish the conversation without asking. When they do ask, it answers honestly.",
+      "Listen to the recordings and decide for yourself. Customers regularly finish the conversation without asking. When they do ask, it answers honestly.",
   },
   {
     question: "Does it replace my staff?",
@@ -31,6 +31,6 @@ export const FAQS = [
   {
     question: "What does it cost?",
     answer:
-      "A one-time build per agent, then a monthly plan sized to your volume. Less per hour of coverage than any human alternative. Pricing page has the full table.",
+      "A one-time build per agent, then a monthly plan sized to your volume, less per hour of coverage than any human alternative. Book a free sales call and you'll leave with your exact number.",
   },
 ] as const;

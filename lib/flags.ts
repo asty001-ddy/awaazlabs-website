@@ -4,9 +4,10 @@
  */
 
 /**
- * Case studies ship gated until client sign-off is confirmed in the
- * deploy environment. Off (default): pages render for review but are
- * noindex/nofollow, out of the sitemap, and unlinked from /customers.
+ * Case studies: Advanzatech and Sirius Solutions Global sign-offs were
+ * confirmed (Aug 2026), so the pages default to live: indexable, in the
+ * sitemap, linked from /customers. Set NEXT_PUBLIC_CASE_STUDIES_LIVE to
+ * "false" to re-gate them if a sign-off is ever withdrawn.
  */
 export const CASE_STUDIES_LIVE =
-  process.env.NEXT_PUBLIC_CASE_STUDIES_LIVE === "true";
+  process.env.NEXT_PUBLIC_CASE_STUDIES_LIVE !== "false";

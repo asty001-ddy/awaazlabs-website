@@ -46,7 +46,7 @@ export default function Problem() {
           <p className="label text-void-muted">The leak you can&apos;t see</p>
         </Reveal>
         <h2 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight sm:text-5xl lg:text-6xl">
-          <MaskReveal>Your phone rang last night.</MaskReveal>
+          <MaskReveal>Your phone rang last night.</MaskReveal>{" "}
           <MaskReveal delay={0.08}>Nobody heard it.</MaskReveal>
         </h2>
 

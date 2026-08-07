@@ -536,7 +536,7 @@ export default function Solution() {
           <p className="label text-faint">One system, the whole journey</p>
         </Reveal>
         <h2 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          <MaskReveal>From first ring to</MaskReveal>
+          <MaskReveal>From first ring to</MaskReveal>{" "}
           <MaskReveal delay={0.08}>
             five-star review. <Marker>Handled.</Marker>
           </MaskReveal>

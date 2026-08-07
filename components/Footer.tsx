@@ -75,7 +75,14 @@ export default function Footer() {
 
       <div className="mx-auto mt-12 flex max-w-[1200px] flex-col justify-between gap-3 border-t border-void-line/60 px-5 pt-6 text-sm opacity-70 sm:flex-row lg:px-8">
         <p>&copy; {new Date().getFullYear()} Awaaz Labs. All rights reserved.</p>
-        <p>Built for businesses that live and die by the calendar.</p>
+        <a
+          href="https://www.linkedin.com/company/awaazlabs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-paper"
+        >
+          LinkedIn
+        </a>
       </div>
     </footer>
   );

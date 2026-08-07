@@ -17,7 +17,7 @@ export default function FinalCTA() {
           <p className="label text-void-muted">The first step is free</p>
         </Reveal>
         <h2 className="mt-6 max-w-4xl font-display text-5xl leading-[1.02] font-medium tracking-tight sm:text-6xl lg:text-7xl">
-          <MaskReveal>Find out what</MaskReveal>
+          <MaskReveal>Find out what</MaskReveal>{" "}
           <MaskReveal delay={0.08}>
             you&apos;re leaking. <Marker>Free.</Marker>
           </MaskReveal>
