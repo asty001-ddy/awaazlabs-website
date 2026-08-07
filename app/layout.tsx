@@ -11,11 +11,20 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Awaaz Labs",
+  // Entity disambiguation: the "Awaaz" namespace is crowded (unrelated
+  // voice AI companies share similar names). sameAs + the parent org
+  // URL tie this entity to Finova Solutions. Add the Awaaz Labs
+  // LinkedIn company page URL here the moment it exists.
   url: SITE_URL,
   slogan: TAGLINE,
   description:
-    "Awaaz Labs is the AI front desk that captures every inbound lead an appointment-based business would otherwise miss, then books, reminds, follows up, and collects the review.",
-  parentOrganization: { "@type": "Organization", name: "Finova Solutions" },
+    "Awaaz Labs is the AI front desk that captures every inbound lead an appointment-based business would otherwise miss, then books, reminds, follows up, and collects the review. A product of Finova Solutions.",
+  sameAs: ["https://finovasolutions.tech"],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Finova Solutions",
+    url: "https://finovasolutions.tech",
+  },
 };
 
 const bricolage = Bricolage_Grotesque({

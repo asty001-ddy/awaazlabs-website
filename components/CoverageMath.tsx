@@ -57,7 +57,7 @@ export default function CoverageMath() {
           <p className="label text-faint">Coverage math</p>
         </Reveal>
         <h2 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          <MaskReveal>The math your front desk</MaskReveal>
+          <MaskReveal>The math your front desk</MaskReveal>{" "}
           <MaskReveal delay={0.08}>already knows.</MaskReveal>
         </h2>
 

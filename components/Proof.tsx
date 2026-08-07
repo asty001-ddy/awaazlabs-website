@@ -37,7 +37,7 @@ export default function Proof() {
           <p className="label text-faint">Proof</p>
         </Reveal>
         <h2 className="mt-6 max-w-3xl font-display text-4xl leading-[1.05] font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          <MaskReveal>Running in production,</MaskReveal>
+          <MaskReveal>Running in production,</MaskReveal>{" "}
           <MaskReveal delay={0.08}>not in a pitch deck.</MaskReveal>
         </h2>
 
